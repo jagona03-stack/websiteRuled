@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<script src="//code.tidio.co/7aql0g9fq03cq2dmw2nrap259tkyx6fm.js" async></script>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ruled Live | El Escenario Nocturno</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">const translations = {
+            es: {
+                hero_tag: 'Experiencia en Vivo',
+                hero_title: 'LA <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SINFONÍA</span><br/>DIGITAL.',
+                hero_desc: 'Transformamos espacios físicos en lienzos tecnológicos. Pistas LED, pantallas volumétricas y arquitectura de luz diseñada para el impacto emocional absoluto.',
+                hero_btn_book: 'RESERVAR ESCENARIO',
+                hero_btn_reel: 'VER REEL',
+                gallery_title: 'INMERSIÓN TOTAL',
+                gallery_desc: 'Explora nuestros últimos despliegues visuales. Desde festivales internacionales hasta activaciones boutique.',
+                gallery_archive: 'ARCHIVO_PROYECTOS_2024',
+                card1_tag: 'PISTA INTERACTIVA',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 metros cuadrados de respuesta táctil sincronizada con el BPM del escenario.',
+                card2_tag: 'PANTALLAS 4K',
+                card2_title: 'VISIÓN CURVA',
+                card3_tag: 'ILUMINACIÓN 3D',
+                card3_title: 'MAPEO ATMOSFÉRICO',
+                card3_desc: 'Diseño de luz volumétrica para espacios inmersivos.',
+                card4_tag: 'SISTEMA CONTROL',
+                card4_title: 'CIRCUITO CERRADO',
+                booking_title: 'ENCIENDE<br/>TU VISIÓN.',
+                booking_desc: 'Nuestros ingenieros están listos para diseñar tu próxima puesta en escena. Envía los detalles técnicos para iniciar la preventa.',
+                booking_global: 'Despliegue Global',
+                booking_install: 'Instalación en 24h',
+                form_type: 'Tipo de Evento',
+                form_type_ph: 'EJ. FESTIVAL ELECTRÓNICA',
+                form_date: 'Fecha del Evento',
+                form_capacity: 'Aforo Estimado',
+                form_email: 'Email de Contacto',
+                form_btn: 'SOLICITAR PRESUPUESTO TÉCNICO',
+                footer_desc: 'Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.',
+                footer_cta: 'Cotización Venta',
+                footer_rent: 'Cotización Renta',
+                footer_privacy: 'Privacidad',
+                modal_title: 'Agendar mi Evento',
+                modal_subtitle: 'Captura los parámetros de tu proyecto',
+                modal_type_ph: 'EJ. FESTIVAL ELECTRÓNICA / BODA / CONGRESO',
+                modal_btn: 'Verificar Disponibilidad'
+            },
+            en: {
+                hero_tag: 'Live Experience',
+                hero_title: 'THE DIGITAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SYMPHONY</span>.',
+                hero_desc: 'We transform physical spaces into technological canvases. LED floors, volumetric screens, and lighting architecture designed for absolute emotional impact.',
+                hero_btn_book: 'BOOK STAGE',
+                hero_btn_reel: 'WATCH REEL',
+                gallery_title: 'TOTAL IMMERSION',
+                gallery_desc: 'Explore our latest visual deployments. From international festivals to boutique activations.',
+                gallery_archive: 'PROJECT_ARCHIVE_2024',
+                card1_tag: 'INTERACTIVE FLOOR',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 square meters of tactile response synchronized with the stage BPM.',
+                card2_tag: '4K SCREENS',
+                card2_title: 'CURVED VISION',
+                card3_tag: '3D LIGHTING',
+                card3_title: 'ATMOSPHERIC MAPPING',
+                card3_desc: 'Volumetric light design for immersive spaces.',
+                card4_tag: 'CONTROL SYSTEM',
+                card4_title: 'CLOSED CIRCUIT',
+                booking_title: 'IGNITE<br/>YOUR VISION.',
+                booking_desc: 'Our engineers are ready to design your next performance. Send technical details to start pre-sale.',
+                booking_global: 'Global Deployment',
+                booking_install: '24h Installation',
+                form_type: 'Event Type',
+                form_type_ph: 'E.G. ELECTRONIC FESTIVAL',
+                form_date: 'Event Date',
+                form_capacity: 'Estimated Capacity',
+                form_email: 'Contact Email',
+                form_btn: 'REQUEST TECHNICAL QUOTE',
+                footer_desc: 'Leaders in high-end audiovisual solutions for events and broadcast.',
+                footer_cta: 'Sales Quote',
+                footer_rent: 'Rental Quote',
+                footer_privacy: 'Privacy',
+                modal_title: 'Schedule My Event',
+                modal_subtitle: 'Capture your project parameters',
+                modal_type_ph: 'E.G. ELECTRONIC FESTIVAL / WEDDING / CONGRESS',
+                modal_btn: 'Check Availability'
+            }
+        };
+
+        function setLanguage(lang) {
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            
+            if (lang === 'es') {
+                esBtn.classList.add('text-secondary');
+                esBtn.classList.remove('text-white/40', 'hover:text-white');
+                enBtn.classList.remove('text-secondary');
+                enBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'es';
+            } else {
+                enBtn.classList.add('text-secondary');
+                enBtn.classList.remove('text-white/40', 'hover:text-white');
+                esBtn.classList.remove('text-secondary');
+                esBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'en';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function openReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+                iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+            }
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const originalSrc = iframe.src.replace(/[&?]autoplay=1/, '');
+            iframe.src = originalSrc;
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#000000",
+                        "primary-fixed-dim": "#d160ff",
+                        "primary-dim": "#bc00fb",
+                        "on-background": "#fbfdfa",
+                        "surface-tint": "#e08dff",
+                        "secondary-dim": "#00e5ee",
+                        "tertiary-fixed": "#ff81f5",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-low": "#111413",
+                        "on-secondary": "#00575b",
+                        "on-tertiary-container": "#230023",
+                        "inverse-on-surface": "#535654",
+                        "error-dim": "#d73357",
+                        "error": "#ff6e84",
+                        "on-tertiary-fixed-variant": "#6a006a",
+                        "secondary-fixed": "#00f4fe",
+                        "surface-container-highest": "#222725",
+                        "secondary-fixed-dim": "#00e5ee",
+                        "on-primary": "#4f006c",
+                        "tertiary-container": "#fe00fe",
+                        "secondary-container": "#00696e",
+                        "secondary": "#00f4fe",
+                        "tertiary-dim": "#ff51fa",
+                        "primary-fixed": "#d978ff",
+                        "primary-container": "#d978ff",
+                        "on-secondary-container": "#dffdff",
+                        "on-surface": "#fbfdfa",
+                        "on-primary-fixed-variant": "#4c0068",
+                        "inverse-primary": "#9a00cf",
+                        "outline": "#737674",
+                        "on-secondary-fixed": "#004346",
+                        "tertiary-fixed-dim": "#ff61f8",
+                        "error-container": "#a70138",
+                        "surface-dim": "#0c0f0e",
+                        "outline-variant": "#464847",
+                        "tertiary": "#ff51fa",
+                        "background": "#0c0f0e",
+                        "surface": "#0c0f0e",
+                        "on-surface-variant": "#a9aca9",
+                        "surface-container-high": "#1c201f",
+                        "on-secondary-fixed-variant": "#006266",
+                        "surface-variant": "#222725",
+                        "on-primary-fixed": "#000000",
+                        "on-error": "#490013",
+                        "on-tertiary-fixed": "#320032",
+                        "surface-bright": "#282d2b",
+                        "primary": "#e08dff",
+                        "inverse-surface": "#f8faf7",
+                        "on-primary-container": "#3d0055",
+                        "surface-container": "#171a19",
+                        "on-tertiary": "#400040"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { 
+            background-color: #0c0f0e; 
+            font-family: 'Manrope', sans-serif; 
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glow-primary { box-shadow: 0 0 40px -10px rgba(224, 141, 255, 0.4); }
+        .glow-secondary { box-shadow: 0 0 40px -10px rgba(0, 244, 254, 0.4); }
+        .glass-panel { backdrop-filter: blur(20px); background: rgba(40, 45, 43, 0.4); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .logo-glow { filter: drop-shadow(0 0 8px rgba(224, 141, 255, 0.3)); }
+        
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .toast-animation { animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_30px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
+<div class="flex items-center">
+<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://lh3.googleusercontent.com/aida/ADBb0uh6SUsn0RIW5dPvTy8S5EDmGcT2fUi0MSWIPwGXdJx0Wh1sEjqcg9HpBGXLai9Tj7i4LP4maXb0pMlGzd5Kn5nYHkK3NcfLDR8axCXOaxtJAkDkdjeGBrD0vQ7PwuJmLmbhni5z0D7xDTH5NReHu6hqwBHiQWfGRfyO1GzAmZaxpwoHvRTK8OcukwY27mOs2Gaiv0M5fsxR4t60uvEa7wIj5KAF0mXemIHvEa1dorfqpRfvvjYYSIJSwWLHMtdQ8g96C1N3I8BJ"/></a>
+</div>
+<div class="flex items-center gap-4"><div class="flex items-center gap-2 border border-outline-variant/30 px-3 py-1 rounded-full">
+<button class="text-[10px] font-label uppercase tracking-widest text-secondary" id="lang-es" onclick="setLanguage('es')">ES</button>
+<span class="w-[1px] h-3 bg-outline-variant/30"></span>
+<button class="text-[10px] font-label uppercase tracking-widest text-white/40 hover:text-white transition-colors" id="lang-en" onclick="setLanguage('en')">EN</button>
+</div></div>
+</div>
+<div class="bg-gradient-to-b from-[#1c201f] to-transparent h-[1px] w-full"></div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen w-full flex items-center justify-start overflow-hidden px-6 md:px-20 py-24 md:py-0">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.3]" data-alt="toma panorámica cinematográfica de un escenario masivo de festival de música" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjseBwyMynURWb66oYNv7ruGPid_Kui551dgx75OMYlL9eGMz9kk9e7aPeUpusSYJyrXPWJsu3XXRbeNdzw2tTd6qONzIZhF64T6p4XHxlz8p9MH8wMzPS8BfNGZKKJEi6RSTuSiUsZT7_w6PLaWbeQp92WbsR6vHLc-1eyVQD1Sf2BAIcaTrgjNSxTnJvZ6OXBSCRd_fTAysa3Veb2JHn3jTOCKn597eACcXfWoHVPxXfhbk2m06MPJYSkBcUbUPemx12lkIwG-g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label text-tertiary uppercase tracking-[0.3em] text-[10px]" data-i18n="hero_tag">Experiencia en Vivo</span>
+</div>
+<h1 class="font-headline text-5xl md:text-8xl font-bold tracking-tighter leading-tight mb-8" data-i18n="hero_title">
+                LA <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SINFONÍA</span><br/>DIGITAL.
+            </h1>
+<p class="font-body text-on-surface-variant text-lg md:text-xl max-w-xl mb-10 leading-relaxed" data-i18n="hero_desc">
+                Transformamos espacios físicos en lienzos tecnológicos. Pistas LED, pantallas volumétricas y arquitectura de luz diseñada para el impacto emocional absoluto.
+            </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-label font-bold uppercase tracking-widest glow-primary hover:scale-105 transition-transform flex items-center gap-3 inline-block" onclick="openBookingModal()">RESERVAR ESCENARIO <span class="material-symbols-outlined">arrow_forward</span></button>
+<button class="px-8 py-4 border border-outline-variant/30 text-white font-label font-bold uppercase tracking-widest hover:bg-white/5 transition-colors" onclick="openReelModal()">
+                    VER REEL
+                </button>
+</div>
+</div>
+</header>
+<!-- Project Gallery -->
+<section class="py-32 px-6 max-w-screen-2xl mx-auto overflow-visible">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter mb-4" data-i18n="gallery_title">INMERSIÓN TOTAL</h2>
+<div class="h-1 w-24 bg-secondary mb-6"></div>
+<p class="text-on-surface-variant font-body" data-i18n="gallery_desc">Explora nuestros últimos despliegues visuales. Desde festivales internacionales hasta activaciones boutique.</p>
+</div>
+<div class="font-label text-outline text-sm tracking-widest" data-i18n="gallery_archive">ARCHIVO_PROYECTOS_2024</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 group relative overflow-hidden aspect-[16/9] md:aspect-auto md:h-[600px] bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-100" data-alt="pista de baile con azulejos LED interactivos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEc4Cm1xD76-uOAsjs1YOXj8yjcjhwmQGCpq0GY8pzyrCxWZBapaFhTuqbOvKwBvhptKK6zBBqfzQTwvJEYHum9yl3Srk4UTOA8XVWGd9GgIksVqBAkQb1qRvPF2ScQWpgN9LJ3Fu8PskMbfBgxUnapGUCgZMzXXHsN4e0sH_dOr7-x-eRE_LxiKeKwcpVni7ubtgu4x09XplB1FctmqBGkwZ7iBOA4XDvwpTRJPsllQEp_9NWL4Ng58xpZKDG99IWKMec5x4Cfng"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="px-3 py-1 bg-primary/20 text-primary border border-primary/30 font-label text-[10px] mb-4 inline-block">PISTA INTERACTIVA</span>
+<h3 class="font-headline text-4xl font-bold mb-2">NEON PULSE FLOOR</h3>
+<p class="font-body text-white/60 max-w-sm">64 metros cuadrados de respuesta táctil sincronizada con el BPM del escenario.</p>
+</div>
+</div>
+<!-- Side Card -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] md:h-[600px] bg-surface-container-low translate-y-0 md:translate-y-12">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-50" data-alt="pared de video LED curva" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBynNFh6nZpUQ6Mn9f5TH2J8iBjUVT71H0em71YuYTmZY0XcL1a8mPOreFShiQmljIzctxcWwJb7amINH9IuM_OA_9FIQ3u9HBVgSeJeM9y0-_O7N0XIA7n_KtJ5jaGwDdWBwD3rYWSrkzgfKtm-Gb0YsgzHN_-ANsxjl6V94q9cTEv55DIem0wnYeesreUJ57lm8ellE_PhvxokOljHgHAfqBxgq-3AzSAR60quqS3h1pEJsXeQg8_rNZwGarHCjcdixi4ieGB4hc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="px-3 py-1 bg-secondary/20 text-secondary border border-secondary/30 font-label text-[10px] mb-4 inline-block">PANTALLAS 4K</span>
+<h3 class="font-headline text-2xl font-bold mb-2">VISIÓN CURVA</h3>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="md:col-span-4 group relative overflow-hidden h-[400px] bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="configuración de iluminación de escenario abstracta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDk6UgzwWaf0j4Hrfqft0IC-NArHDCMqS6uQtqya_MbPhjNF3VdvraVxWAtMcyInhaJIqeiYsWb-s7dPNVZoZL3ZQAjgPl87aS3-bkL_gSpLv_0RBwOTQ1kHV9-HHqrBSm4Kfq6EF4KA66iprt0VTtqyWyYLPqzqACbpUWl9XJBKGzSZJKoS5C52P92ZkhTseeDM-yEzefJJ7_xgRRfZKGmI73sOsJjaZ7pmSwoRxM1Ff9iwutwfYYCb4MiGlZqMJktODyJ2BpqDo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30 font-label text-[10px] mb-4 inline-block" data-i18n="card3_tag">ILUMINACIÓN 3D</span>
+<h3 class="font-headline text-2xl font-bold mb-2" data-i18n="card3_title">MAPEO ATMOSFÉRICO</h3>
+<p class="font-body text-white/60 text-xs" data-i18n="card3_desc">Diseño de luz volumétrica para espacios inmersivos.</p>
+</div>
+</div>
+<!-- Mid Feature Card -->
+<div class="md:col-span-8 group relative overflow-hidden h-[400px] bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="Professional broadcast control system interface" src="https://i.ibb.co/5WsFGD0r/Bmz-Z3.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30 font-label text-[10px] mb-4 inline-block" data-i18n="card3_tag">SISTEMA CONTROL</span>
+<h3 class="font-headline text-3xl font-bold mb-2">CIRCUITO CERRADO</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Section (Static Preview) -->
+<section class="py-32 relative overflow-hidden" id="contacto">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full translate-x-1/2"></div>
+<div class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-8 italic" data-i18n="booking_title">ENCIENDE<br/>TU VISIÓN.</h2>
+<p class="font-body text-on-surface-variant text-lg mb-12 leading-relaxed" data-i18n="booking_desc">
+                    Nuestros ingenieros están listos para diseñar tu próxima puesta en escena. Envía los detalles técnicos para iniciar la preventa.
+                </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="font-label uppercase tracking-widest text-xs">Despliegue Global</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<span class="font-label uppercase tracking-widest text-xs">Instalación en 24h</span>
+</div>
+</div>
+</div>
+<!-- This placeholder form triggers the modal on focus -->
+<div class="glass-panel p-8 md:p-12 border-t-2 border-primary glow-primary cursor-pointer" onclick="openBookingModal()">
+<div class="space-y-8 pointer-events-none opacity-80">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary">Tipo de Evento</label>
+<div class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-white/40 pb-4">EJ. FESTIVAL ELECTRÓNICA</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-secondary">Fecha del Evento</label>
+<div class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-white/40 pb-4" data-static-date-placeholder="true">DD/MM/AAAA</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-secondary">Aforo Estimado</label>
+<div class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-white/40 pb-4">0</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-tertiary">Email de Contacto</label>
+<div class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-white/40 pb-4">usuario@ruled.com.mx</div>
+</div>
+<div class="w-full py-5 bg-white text-black font-label font-bold uppercase tracking-widest flex items-center justify-center gap-3">
+                        SOLICITAR PRESUPUESTO TÉCNICO
+                        <span class="material-symbols-outlined">send</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-[#1c201f] bg-[#0c0f0e] px-12 py-16 font-['Manrope'] text-sm uppercase tracking-widest">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<img alt="Ruled Logo" class="h-6 logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/>
+</div>
+<p class="text-white/30 lowercase tracking-normal normal-case mt-4 max-w-xs">
+                    Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.
+                </p>
+<p class="text-white/20 text-[10px] uppercase tracking-tighter">Engineered for the darkness.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-sale" style="">Cotización Venta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.instagram.com/rulediluminacion" style="" target="_blank">Instagram</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-rent" style="">Cotización Renta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.facebook.com/Rulediluminacion" style="" target="_blank"">Facebook</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.youtube.com/@rulediluminacion" id="nav-youtube" style="" target="_blank"">YOUTUBE</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-privacy" style="">Privacidad</a>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<a class="hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined text-[#bc00fb]">bolt</span></a>
+<a class="hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined text-[#00f4fe]">visibility</span></a>
+<button class="material-symbols-outlined text-white/40 hover:text-primary transition-all hover:scale-110 cursor-pointer" onclick="document.getElementById('share-modal').classList.remove('hidden')">share</button>
+<button class="material-symbols-outlined text-white/40 hover:text-secondary transition-all hover:scale-110 cursor-pointer">language</button>
+</div>
+<p class="text-white/30 text-[10px] mt-8 lowercase">
+                    © 2024 Ruled Audiovisual. Todos los derechos reservados.
+                </p>
+</div>
+</div>z
+</footer>
+<!-- Modal Form (Booking) -->
+<div class="fixed inset-0 z-[120] hidden flex justify-center p-4 bg-background/90 backdrop-blur-2xl items-start pt-10 md:pt-20 overflow-y-auto items-start pt-10 md:pt-20" id="booking-modal">
+<div class="glass-panel p-8 md:p-12 border-t-2 border-primary glow-primary max-w-2xl w-full relative" id="modal-content">
+<div class="flex justify-center mb-6">
+<img alt="Ruled Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhNACQgCYTLWnS3hvOj1C7pB0-O2nrs12Ob-lbrwvxREoznXbr1JajlTXUtyjZXe9mFUQhdY_Axfcf2YLRvtheUz8S0lNI1WJaXDFBDInLmph45bSoIWV9YUB-6Fq99J8Gtg5NPwhB4z72nXPsn_PUfRWVtNVfOM5XNOkcuhbyJcGJ1CHqTWFsW8UfVW8ZzYutXByHSoPaYJuvG4C0h5P_rkIzXriCtzlzUKYqZvZLANAdyonrTRdLmuaVYBFuCmgEHalWQilfAEw"/>
+</div>
+<button class="absolute top-4 right-4 text-white/40 hover:text-white" onclick="closeBookingModal()">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="mb-10">
+<h3 class="font-headline text-3xl font-bold text-white uppercase tracking-tighter italic" id="modal-title">Agendar mi Evento</h3>
+<p class="text-white/40 font-body text-xs mt-2 uppercase tracking-widest">Captura los parámetros de tu proyecto</p>
+</div>
+<form action="https://formsubmit.co/proyectos@ruled.com.mx" class="space-y-10" id="contact-form" method="POST">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary">Tipo de Evento</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 focus:border-secondary focus:ring-0 text-white font-body placeholder:text-white/20 transition-all pb-4" id="modal-event-type" name="tipo_de_evento" placeholder="EJ. FESTIVAL ELECTRÓNICA / BODA / CONGRESO" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-secondary">Fecha del Evento</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 focus:border-secondary focus:ring-0 text-white font-body transition-all pb-4 [color-scheme:dark]" id="modal-event-date" name="fecha_del_evento" required="" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-secondary">Aforo Estimado</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 focus:border-secondary focus:ring-0 text-white font-body placeholder:text-white/20 transition-all pb-4" id="modal-event-capacity" name="aforo_estimado" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-tertiary">Email de Contacto</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 focus:border-secondary focus:ring-0 text-white font-body placeholder:text-white/20 transition-all pb-4" id="modal-event-email" name="email_de_contacto" placeholder="usuario@ruled.com.mx" required="" type="email"/>
+</div>
+<button class="w-full py-5 bg-white text-black font-label font-bold uppercase tracking-widest hover:bg-secondary hover:text-black transition-colors flex items-center justify-center gap-3" type="submit">Verificar Disponibilidad <span class="material-symbols-outlined">send</span></button>
+</form>
+</div>
+</div>
+<!-- Share Modal -->
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-background/90 backdrop-blur-md" id="share-modal">
+<div class="bg-surface-container border border-primary/30 p-8 max-w-sm w-full relative">
+<button class="absolute top-4 right-4 text-white/40 hover:text-white" onclick="document.getElementById('share-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline text-xl font-bold mb-6 text-white uppercase tracking-widest">Compartir</h3>
+<div class="flex flex-col gap-4">
+<button class="flex items-center gap-3 p-3 bg-white/5 hover:bg-white/10 transition-colors border border-white/10" onclick="navigator.clipboard.writeText('www.ruled.com.mx'); alert('Enlace copiado: www.ruled.com.mx');">
+<span class="material-symbols-outlined text-primary">content_copy</span>
+<span class="text-xs font-label uppercase">Copiar Enlace</span>
+</button>
+<a class="flex items-center gap-3 p-3 bg-white/5 hover:bg-white/10 transition-colors border border-white/10" href="https://twitter.com/intent/tweet?text=Mira%20esta%20experiencia%20audiovisual&amp;url=http://www.ruled.com.mx" target="_blank">
+<span class="material-symbols-outlined text-secondary">link</span>
+<span class="text-xs font-label uppercase">X / Twitter</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-white/5 hover:bg-white/10 transition-colors border border-white/10" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ruled.com.mx" target="_blank">
+<span class="material-symbols-outlined text-tertiary">share</span>
+<span class="text-xs font-label uppercase">Facebook</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Reel Modal -->
+<div class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl" id="reel-modal">
+<div class="relative w-full max-w-4xl aspect-video bg-surface-container border border-primary/20 shadow-2xl">
+<button class="absolute -top-12 right-0 text-white hover:text-primary transition-colors" onclick="closeReelModal()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="absolute -top-14 left-0 h-10 flex items-center gap-4">
+<img alt="Ruled Logo" class="h-full w-auto" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/>
+
+</button>
+</div>
+<!-- Standard YouTube embed for better compatibility -->
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="w-full h-full shadow-2xl" frameborder="0" id="reel-video-iframe" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/E99JRpRtIX0" title="RULED Iluminación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="mt-4 flex justify-center">
+<a class="flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-label text-xs uppercase tracking-widest hover:brightness-110 transition-all" href="https://wa.me/?text=Ruled Audiovisual: www.ruled.com.mx" target="_blank">
+<span class="material-symbols-outlined">share</span> Compartir por WhatsApp
+                </a>
+</div>
+</div>
+</div>
+<!-- Success Toast Notification -->
+<div class="fixed top-10 right-10 z-[200] hidden" id="success-toast">
+<div class="glass-panel border-t-2 border-secondary p-6 max-w-sm toast-animation glow-secondary">
+<div class="flex items-start gap-4">
+<div class="text-secondary">
+<span class="material-symbols-outlined text-4xl">check_circle</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-white mb-2 uppercase tracking-widest text-sm">Solicitud Recibida</h4>
+<p class="text-white/60 text-xs font-body mb-6 leading-relaxed">Nuestros ingenieros revisarán los detalles técnicos de tu evento a la brevedad.</p>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2 bg-[#25D366] text-white text-[10px] uppercase tracking-widest font-bold hover:brightness-110 transition-all text-center" id="whatsapp-final-trigger">Confirmar por WhatsApp</button>
+<button class="py-2 text-white/40 text-[10px] uppercase tracking-widest hover:text-white transition-colors" onclick="document.getElementById('success-toast').classList.add('hidden')">Cerrar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>const translations = {
+            es: {
+                hero_tag: 'Experiencia en Vivo',
+                hero_title: 'LA <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SINFONÍA</span><br/>DIGITAL.',
+                hero_desc: 'Transformamos espacios físicos en lienzos tecnológicos. Pistas LED, pantallas volumétricas y arquitectura de luz diseñada para el impacto emocional absoluto.',
+                hero_btn_book: 'RESERVAR ESCENARIO',
+                hero_btn_reel: 'VER REEL',
+                gallery_title: 'INMERSIÓN TOTAL',
+                gallery_desc: 'Explora nuestros últimos despliegues visuales. Desde festivales internacionales hasta activaciones boutique.',
+                gallery_archive: 'ARCHIVO_PROYECTOS_2024',
+                card1_tag: 'PISTA INTERACTIVA',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 metros cuadrados de respuesta táctil sincronizada con el BPM del escenario.',
+                card2_tag: 'PANTALLAS 4K',
+                card2_title: 'VISIÓN CURVA',
+                card3_tag: 'ILUMINACIÓN 3D',
+                card3_title: 'MAPEO ATMOSFÉRICO',
+                card3_desc: 'Diseño de luz volumétrica para espacios inmersivos.',
+                card4_tag: 'SISTEMA CONTROL',
+                card4_title: 'CIRCUITO CERRADO',
+                booking_title: 'ENCIENDE<br/>TU VISIÓN.',
+                booking_desc: 'Nuestros ingenieros están listos para diseñar tu próxima puesta en escena. Envía los detalles técnicos para iniciar la preventa.',
+                booking_global: 'Despliegue Global',
+                booking_install: 'Instalación en 24h',
+                form_type: 'Tipo de Evento',
+                form_type_ph: 'EJ. FESTIVAL ELECTRÓNICA',
+                form_date: 'Fecha del Evento',
+                form_capacity: 'Aforo Estimado',
+                form_email: 'Email de Contacto',
+                form_btn: 'SOLICITAR PRESUPUESTO TÉCNICO',
+                footer_desc: 'Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.',
+                footer_cta: 'Cotización Venta',
+                footer_rent: 'Cotización Renta',
+                footer_privacy: 'Privacidad',
+                modal_title: 'Agendar mi Evento',
+                modal_subtitle: 'Captura los parámetros de tu proyecto',
+                modal_type_ph: 'EJ. FESTIVAL ELECTRÓNICA / BODA / CONGRESO',
+                modal_btn: 'Verificar Disponibilidad'
+            },
+            en: {
+                hero_tag: 'Live Experience',
+                hero_title: 'THE DIGITAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SYMPHONY</span>.',
+                hero_desc: 'We transform physical spaces into technological canvases. LED floors, volumetric screens, and lighting architecture designed for absolute emotional impact.',
+                hero_btn_book: 'BOOK STAGE',
+                hero_btn_reel: 'WATCH REEL',
+                gallery_title: 'TOTAL IMMERSION',
+                gallery_desc: 'Explore our latest visual deployments. From international festivals to boutique activations.',
+                gallery_archive: 'PROJECT_ARCHIVE_2024',
+                card1_tag: 'INTERACTIVE FLOOR',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 square meters of tactile response synchronized with the stage BPM.',
+                card2_tag: '4K SCREENS',
+                card2_title: 'CURVED VISION',
+                card3_tag: '3D LIGHTING',
+                card3_title: 'ATMOSPHERIC MAPPING',
+                card3_desc: 'Volumetric light design for immersive spaces.',
+                card4_tag: 'CONTROL SYSTEM',
+                card4_title: 'CLOSED CIRCUIT',
+                booking_title: 'IGNITE<br/>YOUR VISION.',
+                booking_desc: 'Our engineers are ready to design your next performance. Send technical details to start pre-sale.',
+                booking_global: 'Global Deployment',
+                booking_install: '24h Installation',
+                form_type: 'Event Type',
+                form_type_ph: 'E.G. ELECTRONIC FESTIVAL',
+                form_date: 'Event Date',
+                form_capacity: 'Estimated Capacity',
+                form_email: 'Contact Email',
+                form_btn: 'REQUEST TECHNICAL QUOTE',
+                footer_desc: 'Leaders in high-end audiovisual solutions for events and broadcast.',
+                footer_cta: 'Sales Quote',
+                footer_rent: 'Rental Quote',
+                footer_privacy: 'Privacy',
+                modal_title: 'Schedule My Event',
+                modal_subtitle: 'Capture your project parameters',
+                modal_type_ph: 'E.G. ELECTRONIC FESTIVAL / WEDDING / CONGRESS',
+                modal_btn: 'Check Availability'
+            }
+        };
+
+        function setLanguage(lang) {
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            
+            if (lang === 'es') {
+                esBtn.classList.add('text-secondary');
+                esBtn.classList.remove('text-white/40', 'hover:text-white');
+                enBtn.classList.remove('text-secondary');
+                enBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'es';
+            } else {
+                enBtn.classList.add('text-secondary');
+                enBtn.classList.remove('text-white/40', 'hover:text-white');
+                esBtn.classList.remove('text-secondary');
+                esBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'en';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function openReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+                iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+            }
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const originalSrc = iframe.src.replace(/[&?]autoplay=1/, '');
+            iframe.src = originalSrc;
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }</script>
+<script>const translations = {
+            es: {
+                hero_tag: 'Experiencia en Vivo',
+                hero_title: 'LA <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SINFONÍA</span><br/>DIGITAL.',
+                hero_desc: 'Transformamos espacios físicos en lienzos tecnológicos. Pistas LED, pantallas volumétricas y arquitectura de luz diseñada para el impacto emocional absoluto.',
+                hero_btn_book: 'RESERVAR ESCENARIO',
+                hero_btn_reel: 'VER REEL',
+                gallery_title: 'INMERSIÓN TOTAL',
+                gallery_desc: 'Explora nuestros últimos despliegues visuales. Desde festivales internacionales hasta activaciones boutique.',
+                gallery_archive: 'ARCHIVO_PROYECTOS_2024',
+                card1_tag: 'PISTA INTERACTIVA',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 metros cuadrados de respuesta táctil sincronizada con el BPM del escenario.',
+                card2_tag: 'PANTALLAS 4K',
+                card2_title: 'VISIÓN CURVA',
+                card3_tag: 'ILUMINACIÓN 3D',
+                card3_title: 'MAPEO ATMOSFÉRICO',
+                card3_desc: 'Diseño de luz volumétrica para espacios inmersivos.',
+                card4_tag: 'SISTEMA CONTROL',
+                card4_title: 'CIRCUITO CERRADO',
+                booking_title: 'ENCIENDE<br/>TU VISIÓN.',
+                booking_desc: 'Nuestros ingenieros están listos para diseñar tu próxima puesta en escena. Envía los detalles técnicos para iniciar la preventa.',
+                booking_global: 'Despliegue Global',
+                booking_install: 'Instalación en 24h',
+                form_type: 'Tipo de Evento',
+                form_type_ph: 'EJ. FESTIVAL ELECTRÓNICA',
+                form_date: 'Fecha del Evento',
+                form_capacity: 'Aforo Estimado',
+                form_email: 'Email de Contacto',
+                form_btn: 'SOLICITAR PRESUPUESTO TÉCNICO',
+                footer_desc: 'Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.',
+                footer_cta: 'Cotización Venta',
+                footer_rent: 'Cotización Renta',
+                footer_privacy: 'Privacidad',
+                modal_title: 'Agendar mi Evento',
+                modal_subtitle: 'Captura los parámetros de tu proyecto',
+                modal_type_ph: 'EJ. FESTIVAL ELECTRÓNICA / BODA / CONGRESO',
+                modal_btn: 'Verificar Disponibilidad'
+            },
+            en: {
+                hero_tag: 'Live Experience',
+                hero_title: 'THE DIGITAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SYMPHONY</span>.',
+                hero_desc: 'We transform physical spaces into technological canvases. LED floors, volumetric screens, and lighting architecture designed for absolute emotional impact.',
+                hero_btn_book: 'BOOK STAGE',
+                hero_btn_reel: 'WATCH REEL',
+                gallery_title: 'TOTAL IMMERSION',
+                gallery_desc: 'Explore our latest visual deployments. From international festivals to boutique activations.',
+                gallery_archive: 'PROJECT_ARCHIVE_2024',
+                card1_tag: 'INTERACTIVE FLOOR',
+                card1_title: 'NEON PULSE FLOOR',
+                card1_desc: '64 square meters of tactile response synchronized with the stage BPM.',
+                card2_tag: '4K SCREENS',
+                card2_title: 'CURVED VISION',
+                card3_tag: '3D LIGHTING',
+                card3_title: 'ATMOSPHERIC MAPPING',
+                card3_desc: 'Volumetric light design for immersive spaces.',
+                card4_tag: 'CONTROL SYSTEM',
+                card4_title: 'CLOSED CIRCUIT',
+                booking_title: 'IGNITE<br/>YOUR VISION.',
+                booking_desc: 'Our engineers are ready to design your next performance. Send technical details to start pre-sale.',
+                booking_global: 'Global Deployment',
+                booking_install: '24h Installation',
+                form_type: 'Event Type',
+                form_type_ph: 'E.G. ELECTRONIC FESTIVAL',
+                form_date: 'Event Date',
+                form_capacity: 'Estimated Capacity',
+                form_email: 'Contact Email',
+                form_btn: 'REQUEST TECHNICAL QUOTE',
+                footer_desc: 'Leaders in high-end audiovisual solutions for events and broadcast.',
+                footer_cta: 'Sales Quote',
+                footer_rent: 'Rental Quote',
+                footer_privacy: 'Privacy',
+                modal_title: 'Schedule My Event',
+                modal_subtitle: 'Capture your project parameters',
+                modal_type_ph: 'E.G. ELECTRONIC FESTIVAL / WEDDING / CONGRESS',
+                modal_btn: 'Check Availability'
+            }
+        };
+
+        function setLanguage(lang) {
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            
+            if (lang === 'es') {
+                esBtn.classList.add('text-secondary');
+                esBtn.classList.remove('text-white/40', 'hover:text-white');
+                enBtn.classList.remove('text-secondary');
+                enBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'es';
+            } else {
+                enBtn.classList.add('text-secondary');
+                enBtn.classList.remove('text-white/40', 'hover:text-white');
+                esBtn.classList.remove('text-secondary');
+                esBtn.classList.add('text-white/40', 'hover:text-white');
+                document.documentElement.lang = 'en';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function openReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+                iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+            }
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const iframe = document.getElementById('reel-video-iframe');
+            const originalSrc = iframe.src.replace(/[&?]autoplay=1/, '');
+            iframe.src = originalSrc;
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }</script><script>
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            window.scrollTo({ top: -10, behavior: 'smooth' });
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleBookingSubmit() {
+            const type = document.getElementById('modal-event-type').value;
+            const date = document.getElementById('modal-event-date').value;
+            const capacity = document.getElementById('modal-event-capacity').value;
+            const email = document.getElementById('modal-event-email').value;
+
+            const whatsappMsg = `Hola Ruled, me interesa agendar un evento.\n\nTipo: ${type}\nFecha: ${date}\nAforo: ${capacity}\nEmail: ${email}`;
+            const whatsappUrl = `https://wa.me/528332336790?text=${encodeURIComponent(whatsappMsg)}`;
+
+            document.getElementById('whatsapp-final-trigger').onclick = () => window.open(whatsappUrl, '_blank');
+
+            closeBookingModal();
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 10000);
+        }
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('modal-event-date');
+            if (dateInput) {
+                dateInput.setAttribute('min', today);
+            }
+        });
+    </script></body></html>
