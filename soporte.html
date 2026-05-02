@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soporte Especializado | RULED SOLUTIONS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#171a19",
+                        "background": "#000000",
+                        "error": "#ff6e84",
+                        "secondary-container": "#00696e",
+                        "tertiary": "#ff51fa",
+                        "primary-fixed-dim": "#d160ff",
+                        "error-dim": "#d73357",
+                        "tertiary-fixed": "#ff81f5",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-dim": "#00e5ee",
+                        "primary-dim": "#bc00fb",
+                        "error-container": "#a70138",
+                        "outline": "#737674",
+                        "primary-fixed": "#d978ff",
+                        "surface-bright": "#282d2b",
+                        "outline-variant": "#464847",
+                        "on-tertiary": "#400040",
+                        "primary-container": "#d978ff",
+                        "on-secondary-fixed-variant": "#006266",
+                        "tertiary-fixed-dim": "#ff61f8",
+                        "surface-container-highest": "#222725",
+                        "on-primary-fixed": "#000000",
+                        "on-surface": "#fbfdfa",
+                        "surface-dim": "#0c0f0e",
+                        "on-surface-variant": "#a9aca9",
+                        "on-secondary": "#00575b",
+                        "inverse-surface": "#f8faf7",
+                        "surface-container-high": "#1c201f",
+                        "tertiary-container": "#fe00fe",
+                        "tertiary-dim": "#ff51fa",
+                        "secondary": "#00f4fe",
+                        "on-primary-container": "#3d0055",
+                        "inverse-on-surface": "#535654",
+                        "on-secondary-fixed": "#004346",
+                        "surface-tint": "#e08dff",
+                        "on-secondary-container": "#dffdff",
+                        "on-primary": "#4f006c",
+                        "on-error": "#490013",
+                        "secondary-fixed-dim": "#00e5ee",
+                        "surface-variant": "#222725",
+                        "on-tertiary-container": "#230023",
+                        "surface": "#000000",
+                        "surface-container-lowest": "#000000",
+                        "on-background": "#fbfdfa",
+                        "primary": "#e08dff",
+                        "secondary-fixed": "#00f4fe",
+                        "on-tertiary-fixed-variant": "#6a006a",
+                        "on-primary-fixed-variant": "#4c0068",
+                        "surface-container-low": "#111413",
+                        "inverse-primary": "#9a00cf",
+                        "on-tertiary-fixed": "#320032"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .nocturnal-glow-cyan {
+            box-shadow: 0 0 40px rgba(0, 244, 254, 0.15);
+        }
+        .nocturnal-glow-magenta {
+            box-shadow: 0 0 40px rgba(224, 141, 255, 0.15);
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        body {
+            background-color: #000000;
+            color: #fbfdfa;
+        }
+        .lang-active {
+            color: #00F4FE;
+            font-weight: 700;
+        }
+        .vertical-panel {
+            height: 600px;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(224, 141, 255, 0.8);
+        }
+        .button-glow {
+            box-shadow: 0 0 25px rgba(224, 141, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_30px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
+<div class="flex items-center">
+<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/></a>
+</div>
+<!-- Language Selector (Moved to Top Right) -->
+<div class="flex items-center gap-4 font-label text-[10px] tracking-widest uppercase">
+<button class="hover:text-secondary transition-all duration-300" id="lang-btn-es" onclick="changeLanguage('es')">ES</button>
+<span class="w-[1px] h-3 bg-white/20"></span>
+<button class="text-white/40 hover:text-secondary transition-all duration-300" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#1c201f] to-transparent h-[1px]"></div>
+</nav>
+</header>
+<main class="pt-32 bg-black">
+<!-- Hero Branding -->
+<section class="max-w-7xl mx-auto px-8 mb-24 relative">
+<div class="absolute -top-24 -left-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="relative">
+<p class="font-label text-secondary tracking-[0.4em] uppercase mb-4 text-xs font-semibold" style="">Professional Audio-Visual Maintenance</p>
+<h1 class="font-display text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8 uppercase" style="">
+                    Soporte <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary" style="">Especializado</span>
+</h1>
+<p class="max-w-2xl text-on-surface-variant text-lg font-light leading-relaxed" style="">
+                    Elevamos el estándar de la industria LED con precisión técnica y diagnóstico avanzado. Tu infraestructura visual es nuestra prioridad absoluta.
+                </p>
+</div>
+</section>
+<!-- Parallel Vertical Panels -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Panel 1: Configuration -->
+<div class="vertical-panel bg-surface-container-low rounded-2xl p-10 relative overflow-hidden group hover:nocturnal-glow-cyan transition-all duration-500 border border-white/5 flex flex-col justify-start">
+<div class="absolute inset-0 z-0">
+<img alt="Configuration Mapping" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0bI56q0_gNtZiYWcHvGOQCY6K4mliwI07f98WX3ywbUSMn7T0Q9tSbR4Wc8SXHl19T8QRUjgbyOZlNxb_L23ELcUAUNn8Rw2xV3wqb5O2sePg-t9CjqSAQ0oidir3Ex-PePJINboe7Jex61KNhkH3af4uGhZBrgEGg9CnvFJUBlfrbhx2kbIBRjVCs2BI7EJ43hTDDb6G_kuKjQzbOezNnAAamwSlPOgmXWS_6PdSEkcsA2rZ4_YamUqGHMYnj7Vl6YzhXObV00I" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block drop-shadow-[0_0_15px_rgba(0,244,254,0.6)]" style="">settings_input_component</span>
+<h3 class="font-display text-3xl font-bold mb-4 uppercase tracking-tight min-h-[80px] flex items-center" style="display: flex; align-items: center; min-height: 80px;">Configuración y Mapeo</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed font-light" style=""><span style="font-size: medium;">Configuración avanzada de procesadores </span><span class="text-white font-semibold cursor-text" data-stitch-added-classes="cursor-text" spellcheck="false" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; --tw-text-opacity: 1; color: rgb(100, 255, 255); font-size: medium;">Linsn y Novastar</span><span style="font-size: medium;">. Mapeo de pixeles </span><span class="text-white font-semibold cursor-text" data-stitch-added-classes="cursor-text" spellcheck="false" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; --tw-text-opacity: 1; color: rgb(100, 255, 255); font-size: medium;"> (RCG/RCFGX) </span><span style="font-size: medium;"> para pantallas LED de cualquier resolución y tamaño, garantizando una uniformidad cromática perfecta.</span></p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-label uppercase tracking-widest rounded-full border border-secondary/30" style="">4K Resolution</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-label uppercase tracking-widest rounded-full border border-secondary/30" style="">Cloud Sync</span>
+</div>
+</div>
+</div>
+<!-- Panel 2: Repair -->
+<div class="vertical-panel bg-surface-container-low rounded-2xl p-10 relative overflow-hidden group hover:nocturnal-glow-magenta transition-all duration-500 border border-white/5 flex flex-col justify-start">
+<div class="absolute inset-0 z-0">
+<img alt="Specialized Repair" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700" src="https://i.ibb.co/KzV578Gt/7l-UVu.jpg" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block drop-shadow-[0_0_15px_rgba(224,141,255,0.6)]" style='font-variation-settings: "FILL" 1;'>build</span>
+<h3 class="font-display text-3xl font-bold mb-4 uppercase tracking-tight min-h-[80px] flex items-center" style="display: flex; align-items: center; min-height: 80px;">Reparación Especializada</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 font-light" style="font-size: medium;">
+                            Diagnóstico de módulos LED, tarjetas y fuentes. Expertos en reconstrucción de pistas, pantalla y sistemas de control críticos.
+                        </p>
+<ul class="space-y-3 text-xs font-label text-white/60">
+<li class="flex items-center gap-2" style="font-size: medium;"><span class="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_5px_rgba(224,141,255,1)]"></span> MÓDULOS LED</li>
+<li class="flex items-center gap-2" style="font-size: medium;"><span class="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_5px_rgba(224,141,255,1)]"><br/></span> TARJETAS RECEPTORAS<div><br/></div></li>
+<li class="flex items-center gap-2" style="font-size: medium;"><span class="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_5px_rgba(224,141,255,1)]"><br/></span> FUENTES DE PODER<div><br/></div></li>
+</ul>
+</div>
+</div>
+<!-- Panel 3: Accessories -->
+<div class="vertical-panel bg-surface-container-low rounded-2xl p-10 relative overflow-hidden group hover:nocturnal-glow-cyan transition-all duration-500 border border-white/5 flex flex-col justify-start">
+<div class="absolute inset-0 z-0">
+<img alt="Accessories" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB35fGKu8oVjuq5VGjsNtIT221p9_z2ZZoOL9h_olXFXhSDa78-aWutGfhqE4kBJAuMTjSLNVcIbfusckOGZn5EswZYV0z9ZRFNJIr0GkIPlkvz4m6YnlWX2lSTt8780n32Bgk3iA9pNzAMMAWvWn2pJdIaz4SqSMQFLcAVou26xiiXxXGDIy-1FWFK4HXJDHdRQiLlo-Fvt1pAnpT4jr06dtcolAqORoqpncyIPUAO_uWzd_7Hb-T5ewXsezEs9OhRZsa8fdAVWI4" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block drop-shadow-[0_0_15px_rgba(0,244,254,0.6)]" style="">cable</span>
+<h3 class="font-display text-3xl font-bold mb-4 uppercase tracking-tight min-h-[80px] flex items-center" style="display: flex; align-items: center; min-height: 80px;">Accesorios y Refacciones</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed font-light" style="font-size: medium;">
+                            Venta de accesorios originales de alto rendimiento: Cables Ethernet, PowerCon y tarjetas de repuesto.
+                        </p>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-secondary/40 transition-colors">
+<span class="material-symbols-outlined text-white/30 text-2xl" style="">inventory_2</span>
+</div>
+<div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-secondary/40 transition-colors">
+<span class="material-symbols-outlined text-white/30 text-2xl" style="">electrical_services</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Emergency Banner Full Width -->
+<section class="w-full relative overflow-hidden min-h-[500px] flex items-center">
+<div class="absolute inset-0 z-0">
+<img alt="Backstage Support" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtjjdV7E2cQ0u7L86jUxN2zG3vPhLPiIRQSI35Y2wflEWU50vDRVRN0fJtJSv__yS-EseXUMdEyJH6gdyr08gX-s6pnHFlcchuTer5CKcJF2pu0zdReVNB46yOuZI3eazG8nwwNzAdXFQDLqly2wjVGGlyE5lfsc37tayHFnoa2Su1jsAOfqeIznVLB1sfWskt9CM50PgGxAUmEI_e2pX0Nnd2ZYempowzGxJosGAdENv33Ttz1bSmKMcQA-nAhEcGi-ih-4wK6wI" style=""/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
+<div class="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10 w-full">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-black rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 animate-pulse shadow-[0_0_20px_rgba(224,141,255,0.6)]" style="">
+<span class="w-2 h-2 bg-black rounded-full"></span>
+                            Live Support Active
+                        </div>
+<h2 class="font-display text-5xl md:text-7xl font-bold mb-8 uppercase tracking-tight leading-[0.9] text-white text-glow" style="">
+                            ¿Tienes un evento <br/>y tu pantalla falló?
+                        </h2>
+<p class="text-white/80 text-xl font-light max-w-xl" style="">
+                            Contáctanos para soporte remoto o presencial inmediato. Nuestra unidad de respuesta técnica está disponible para garantizar que el show nunca se detenga.
+                        </p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<a class="group relative px-12 py-6 bg-primary text-black font-display font-black uppercase tracking-widest text-base rounded-full hover:scale-105 transition-all button-glow" href="https://wa.me/528332336790" style="">
+                            Hablar con un Técnico
+                        </a>
+<p class="text-[10px] text-white/40 font-label tracking-[0.3em] uppercase" style="">Tiempo de respuesta: &lt; 15 MIN</p>
+</div>
+</div>
+</div>
+
+</section>
+</div>
+<!-- Footer (Unified) -->
+<footer class="w-full border-t border-[#1c201f] bg-[#0c0f0e] px-12 py-16 font-['Manrope'] text-sm uppercase tracking-widest">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<img alt="Ruled Logo" class="h-6 logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png" style=""/>
+</div>
+<p class="text-white/30 lowercase tracking-normal normal-case mt-4 max-w-xs" id="footer-desc" style="">
+                    Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.
+                </p>
+<p class="text-white/20 text-[10px] uppercase tracking-tighter" style="">Engineered for the darkness.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-sale" style="">Cotización Venta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.instagram.com/rulediluminacion" style="" target="_blank">Instagram</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-rent" style="">Cotización Renta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.facebook.com/Rulediluminacion" style="" target="_blank"">Facebook</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.youtube.com/@rulediluminacion" id="nav-youtube" style="" target="_blank"">YOUTUBE</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-privacy" style="">Tienda</a>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<a class="hover:scale-110 transition-transform" href="https://www.youtube.com" style="" target="_blank"><span class="material-symbols-outlined text-[#bc00fb]" style="">bolt</span></a>
+<a class="hover:scale-110 transition-transform" href="https://www.ruled.com.mx" style="" target="_blank"><span class="material-symbols-outlined text-[#00f4fe]" style="">visibility</span></a>
+</div>
+<p class="text-white/30 text-[10px] mt-8 lowercase" id="footer-rights" style="">
+                    © 2024 Ruled Audiovisual. Todos los derechos reservados.
+                </p>
+</div>
+</div>
+</footer><script>
+        function changeLang(lang) {
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            
+            if (lang === 'es') {
+                esBtn.classList.add('lang-active');
+                esBtn.classList.remove('hover:text-white');
+                enBtn.classList.remove('lang-active');
+                enBtn.classList.add('hover:text-white');
+            } else {
+                enBtn.classList.add('lang-active');
+                enBtn.classList.remove('hover:text-white');
+                esBtn.classList.remove('lang-active');
+                esBtn.classList.add('hover:text-white');
+            }
+        }
+    </script>
+</body></html>

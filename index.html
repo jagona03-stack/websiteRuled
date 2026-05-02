@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<script src="//code.tidio.co/7aql0g9fq03cq2dmw2nrap259tkyx6fm.js" async></script>
 <html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -71,9 +72,10 @@
                     "full": "0.75rem"
             },
             "fontFamily": {
-                    "headline": ["Space Grotesk"],
-                    "body": ["Manrope"],
-                    "label": ["Space Grotesk"]
+                "headline": ["Space Grotesk"],
+                "display": ["Space Grotesk"],
+                "body": ["Manrope"],
+                "label": ["Space Grotesk"]
             }
           },
         },
@@ -112,6 +114,19 @@
             text-shadow: 0 0 10px rgba(0, 244, 254, 0.8);
             font-weight: 700;
         }
+
+/* Regla para mostrar el tooltip cuando se hace hover en el panel */
+	.split-panel:hover .tooltip {
+	    opacity: 1 !important;
+	    transform: translateY(0) !important;
+	}
+
+/* Estilo para el efecto de cristal (glassmorphism) de las ventanas */
+	.nocturnal-glass {
+   	 background: rgba(15, 15, 15, 0.8);
+   	 backdrop-filter: blur(12px);
+   	 -webkit-backdrop-filter: blur(12px);
+}
     </style>
 </head>
 <body class="text-on-background">
@@ -119,7 +134,7 @@
 <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_30px_rgba(0,0,0,1)]">
 <div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
 <div class="flex items-center">
-<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://lh3.googleusercontent.com/aida/ADBb0uh6SUsn0RIW5dPvTy8S5EDmGcT2fUi0MSWIPwGXdJx0Wh1sEjqcg9HpBGXLai9Tj7i4LP4maXb0pMlGzd5Kn5nYHkK3NcfLDR8axCXOaxtJAkDkdjeGBrD0vQ7PwuJmLmbhni5z0D7xDTH5NReHu6hqwBHiQWfGRfyO1GzAmZaxpwoHvRTK8OcukwY27mOs2Gaiv0M5fsxR4t60uvEa7wIj5KAF0mXemIHvEa1dorfqpRfvvjYYSIJSwWLHMtdQ8g96C1N3I8BJ"/></a>
+<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/></a>
 </div>
 <!-- Language Selector (Moved to Top Right) -->
 <div class="flex items-center gap-4 font-label text-[10px] tracking-widest uppercase">
@@ -132,56 +147,71 @@
 </nav>
 <!-- Wrapper for scrollable content -->
 <div class="w-full">
-<!-- Hero Section: Double Door Split Screen -->
-<main class="flex flex-col md:flex-row h-screen w-full overflow-hidden" id="home">
-<!-- Section Left: Ruled Live -->
-<section class="group relative flex-1 h-1/2 md:h-full overflow-hidden split-hover">
-<div class="absolute inset-0 z-0 scale-105 group-hover:scale-100 transition-transform duration-700">
-<div class="absolute inset-0 bg-[#0c0f0e]/40 z-10 group-hover:bg-[#0c0f0e]/20 transition-colors duration-500"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-[#0c0f0e] via-transparent to-transparent z-10 opacity-60"></div>
-<img alt="Concert stage" class="w-full h-full object-cover" data-alt="Immersive live concert stage with vibrant purple and magenta laser lights, massive LED screens, and a silhouetted crowd in a high-energy nocturnal atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKZONlsxBVN_5iY-tM44CgpyE3oWaS80yd5pywJHom5WELJDJOlPfLOT80SLK8odTEWvexK27MK-Eane0g4VD2ouerSQ-ssIvb9IPaTUjEhby8xnXHqxC_VX9fS-hRuG8nosm_nJbrezyjfnI38YgeX6FyMzgUGbGhr7OWOL3xPkwyj6LiDFKDptB_jAIGX5pu3OS_612iym4urSH8pW6FQx-WaJrbaBo6k7Y9nzJCcUQ9FWbLDvFvVUDQhQD4_apD9zGEkDXuscM" style=""/>
-</div>
-<div class="relative z-20 flex flex-col items-center md:items-start justify-center h-full px-8 md:px-16 lg:px-24 content-box transition-transform duration-500">
-<span class="font-label text-primary tracking-[0.3em] uppercase mb-4 text-xs font-bold" id="hero-live-label" style="">The Experience</span>
-<h2 class="font-headline text-5xl md:text-7xl font-bold text-white leading-tight max-w-xl text-center md:text-left" id="hero-live-title" style="">
-                    Haz que tu <span class="text-primary italic" style="">evento</span> brille
-                </h2>
-<p class="mt-6 text-white/60 font-body text-lg max-w-md text-center md:text-left leading-relaxed" id="hero-live-desc" style="">
-                    Producción audiovisual inmersiva para los escenarios más exigentes del mundo.
-                </p>
-<div class="mt-10">
-<a class="bg-primary text-on-primary font-label font-bold py-4 px-10 rounded-DEFAULT glow-primary hover:bg-primary-fixed-dim transition-all active:scale-95 uppercase tracking-widest text-xs flex items-center gap-3" href="https://ruled.com.mx/live" id="hero-live-btn" style="">
-                        Explorar Ruled Live
-                        <span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/50 to-transparent z-30 hidden md:block"></div>
-</section>
-<!-- Section Right: Ruled Solutions -->
-<section class="group relative flex-1 h-1/2 md:h-full overflow-hidden split-hover">
-<div class="absolute inset-0 z-0 scale-105 group-hover:scale-100 transition-transform duration-700">
-<div class="absolute inset-0 bg-[#0c0f0e]/50 z-10 group-hover:bg-[#0c0f0e]/30 transition-colors duration-500"></div>
-<div class="absolute inset-0 bg-gradient-to-l from-[#0c0f0e] via-transparent to-transparent z-10 opacity-60"></div>
-<img alt="Technical manufacturing" class="w-full h-full object-cover" data-alt="Macro high-resolution shot of advanced LED panel circuitry and high-tech components in a modern, clean fabrication facility with cool cyan lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYG7qTMXWril3GqhNhUXLRRZTFpA_17iPH5ZsPHxEupO2kCSyKPu6J2UNix9sLRLxHoN70d0vJxMzPoSWvhArkQOddAuuOWoo53-SVVNxsS7SM87Eqqo02Vsj3UGOEHQe_zEdGXREOtkOMawOa-a4t3Dyt93RDdbM0xoFeHj9mxUyRW7V-3eKng5vhXwQELA2znzrKsya0oFPBoS2Ogs3F1X68JWnokVV7arRHrBJ_Q0ywLpyLL5ywC9dHpWBokxFSTMIkQXjqd5M" style=""/>
-</div>
-<div class="relative z-20 flex flex-col items-center md:items-end justify-center h-full px-8 md:px-16 lg:px-24 content-box transition-transform duration-500">
-<span class="font-label text-secondary tracking-[0.3em] uppercase mb-4 text-xs font-bold" id="hero-sol-label" style="">The Hardware</span>
-<h2 class="font-headline text-5xl md:text-7xl font-bold text-white leading-tight max-w-xl text-center md:text-right" id="hero-sol-title" style="">
-                    Equipamiento <span class="text-secondary italic" style="">LED</span> de alto rendimiento
-                </h2>
-<p class="mt-6 text-white/60 font-body text-lg max-w-md text-center md:text-right leading-relaxed" id="hero-sol-desc" style="">
-                    Ingeniería de precisión y tecnología de visualización de próxima generación para instalaciones fijas.
-                </p>
-<div class="mt-10">
-<a class="border border-secondary/30 bg-secondary/10 text-secondary font-label font-bold py-4 px-10 rounded-DEFAULT glow-secondary hover:bg-secondary/20 transition-all active:scale-95 uppercase tracking-widest text-xs flex items-center gap-3" href="https://ruled.com.mx/solutions" id="hero-sol-btn" style="">
-                        Explorar Ruled Solutions
-                        <span class="material-symbols-outlined text-sm" style="">settings_input_component</span>
-</a>
-</div>
-</div>
-<div class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-secondary/50 to-transparent z-30 hidden md:block"></div>
-</section>
+<!-- Hero Section: Double Door Split Screen (Actualizado con Tooltips) -->
+<main class="h-screen w-full flex overflow-hidden" id="home">
+    <!-- Left Panel: Ruled Live -->
+    <div class="split-panel group relative w-1/2 h-full cursor-pointer overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChZnDb2A0rNkU79qKxIgCT6LLsfuQf-GwjByHN7wS79Gc7lKnU0nQaeM2lYzlCCHDW9KApZ8c36Sig_0xgcvCNW7UHwYRY0vWpxCq-KCQ2PgYYvNspqXGnzOQxUZ8PoJYYuuaUniFgkVcL3Gh3fjXZHpnb3wDu2nyiXUBo4q6j1-6FpqdYwrKO9PYRx9AjdUC17yM0K4TQPgMbiqh2Y5cumtfiXGWAcf7tCLsKbxyoYZ3BKSmAx-AZfy5VMaHaC-aij6mlU0eZ16E')">
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 to-transparent mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors duration-500"></div>
+        </div>
+        <div class="relative h-full flex flex-col justify-center px-16 z-10">
+            <span class="font-label text-primary tracking-[0.4em] uppercase text-xs mb-4 opacity-70">Experience</span>
+            <h2 class="font-display text-6xl font-black tracking-tighter uppercase text-white mb-2 text-glow-primary">
+                Ruled Live
+            </h2>
+            <div class="w-12 h-1 bg-primary mb-8 transition-all duration-500 group-hover:w-32"></div>
+            
+            <!-- Botón Fijo Ruled Live -->
+            <div class="mb-8">
+                <a class="inline-flex items-center gap-3 bg-primary text-on-primary font-label font-bold py-4 px-10 rounded-DEFAULT glow-primary hover:bg-primary-fixed-dim transition-all active:scale-95 uppercase tracking-widest text-xs" href="https://ruled.com.mx/live">
+                    Explorar Ruled Live
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+
+            <!-- Floating Tooltip (Aparece al hover) -->
+            <div class="tooltip opacity-0 transform translate-y-4 transition-all duration-500 max-w-sm">
+                <div class="nocturnal-glass p-6 rounded-lg border border-primary/20 glow-primary">
+                    <p class="font-body text-sm leading-relaxed text-on-surface/90">
+                        RULED LIVE: Experiencia Audiovisual para Eventos. Enfocada en servicios temporales donde la calidad técnica y la ejecución impecable son la prioridad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel: Ruled Solutions -->
+    <div class="split-panel group relative w-1/2 h-full cursor-pointer overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnAM0zdIwYIHidkf6u8KpM67gLHUlbNEaagmfGAG_cAioT7acMk4gdaahwykaHQ3brNuF5t0MSX5zmR72_9DA0TTooY3pjpGaRSbwB9ju8EN9AbmGM2eH3OZq4159GKhRfRP65BCr4EdFUtxlCKWUABUV58nn_AGTSrzxioiydCryhiGzywWivAZpoDotHi3LF0y6-H78iOxSkdT_lGquSvYUHrPSBlslwK2Ui-aVFBrFH-q-mEWlAEukEg196Fhpg4n8dCE1ZuNk')">
+            <div class="absolute inset-0 bg-gradient-to-l from-surface-container-lowest/80 to-transparent mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-secondary/10 group-hover:bg-secondary/5 transition-colors duration-500"></div>
+        </div>
+        <div class="relative h-full flex flex-col justify-center items-end px-16 z-10 text-right">
+            <span class="font-label text-secondary tracking-[0.4em] uppercase text-xs mb-4 opacity-70">Infrastructure</span>
+            <h2 class="font-display text-6xl font-black tracking-tighter uppercase text-white mb-2 text-glow-secondary">
+                Ruled Solutions
+            </h2>
+            <div class="w-12 h-1 bg-secondary mb-8 transition-all duration-500 group-hover:w-32 ml-auto"></div>
+
+            <!-- Botón Fijo Ruled Solutions -->
+            <div class="mb-8">
+                <a class="inline-flex items-center gap-3 border border-secondary/30 bg-secondary/10 text-secondary font-label font-bold py-4 px-10 rounded-DEFAULT glow-secondary hover:bg-secondary/20 transition-all active:scale-95 uppercase tracking-widest text-xs" href="https://ruled.com.mx/solutions">
+                    Explorar Ruled Solutions
+                    <span class="material-symbols-outlined text-sm">settings_input_component</span>
+                </a>
+            </div>
+
+            <!-- Floating Tooltip (Aparece al hover) -->
+            <div class="tooltip opacity-0 transform translate-y-4 transition-all duration-500 max-w-sm">
+                <div class="nocturnal-glass p-6 rounded-lg border border-secondary/20 glow-secondary">
+                    <p class="font-body text-sm leading-relaxed text-on-surface/90">
+                        RULED SOLUTIONS: Ingeniería y Venta de Tecnología LED. Esta rama se especializa en proyectos permanentes, infraestructura audiovisual y suministro de componentes técnicos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <!-- Services Portfolio Section -->
 <section class="bg-surface relative z-10" id="servicios">
@@ -222,11 +252,11 @@
 <img alt="Equipo de Audio" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1fN_Vpi7hdY-qe0OYoae4HTRoIGVxH2XNGMCDGxVv78YfO7kBwDKajYCrBFgwG0jPmgNytMmLA5Qy6QXWFZs0-mtT28nYL4XRjU4WJI3m59cSEHiZa1fGx1rPZhj2QuZQ3G8lrTgoGs-Fe6qrif3InIAHMQuWEVqv58Wtt7I1nNTBCs_XNIQ8Iw5WQXcirSglDEk97ErdYF4yI8ZD54IKaAMOxJXs8ro99_GhXJyykG9mSh1OKZu7LzPyD4VgaOl0RoV7Jy_GrpA" style=""/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
 </div>
-<a class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/contacto" id="service-1-btn" style="">
+<a class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/live" id="service-1-btn" style="">
                         Leer Más <span class="material-symbols-outlined" style="">arrow_forward</span>
 </a>
 </div>
-<!-- Card 2: FABRICACIÓN Y RENTA LED -->
+<!-- Card 2: PANTALLAS LED PIXEL -->
 <div class="group relative bg-surface-container-low p-8 transition-all duration-500 hover:bg-surface-container-high neon-glow-secondary">
 <div class="absolute top-0 left-0 w-full h-1 bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 <div class="flex justify-between items-start mb-12">
@@ -235,15 +265,15 @@
 </div>
 <span class="font-headline text-on-surface-variant/20 text-6xl font-black" style="">02</span>
 </div>
-<h3 class="text-3xl font-headline font-bold mb-4 tracking-tight uppercase" id="service-2-title" style="">Fabricación y Renta LED</h3>
+<h3 class="text-3xl font-headline font-bold mb-4 tracking-tight uppercase" id="service-2-title" style="">Pantallas Led Pixel LED</h3>
 <p class="text-on-surface-variant mb-8 leading-relaxed" id="service-2-desc" style="">
-                        Pantallas personalizadas para interiores y exteriores. Diseños a medida con la mayor resolución del mercado para un impacto visual absoluto.
+                        Fabricación y Renta de Pantallas personalizadas para interiores y exteriores. Diseños a medida con la mayor resolución del mercado para un impacto visual absoluto.
                     </p>
 <div class="relative h-64 mb-8 overflow-hidden">
 <img alt="Pantalla LED" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqjHJVdyOa-dTxKJkzfLDRCbMKeohm06G8NXWDutpK9denFHMLrPoI3XR5AojFERZ2XaZwUL2kv3a6kAPAvHDEnh_0dumkaykAfG3u9s1HH9xwwnam6r8U9TouEwSbIQI2IApH8zHtDVDIm85D2O5jrSkmk8DtMa7c8UX3yr_4xZ_C8gGAIBMQ18fwHMXixoWGsg5rKMXS8CgAmCLOYSjHLtQ5J6LYMM2bO9Pdu0wG1gcKQshkBRIwj0Dh1xgyKWupH6BqjI7bESA" style=""/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
 </div>
-<a class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/contacto" id="service-2-btn" style="">
+<a class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/pantallas" id="service-2-btn" style="">
                         Leer Más <span class="material-symbols-outlined" style="">arrow_forward</span>
 </a>
 </div>
@@ -264,7 +294,7 @@
 <img alt="Pista LED" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXV9nQz2mdo7XxBVyp2j6P9Eze7-OrPtVSVg0DG-JNptx892cJqKntGeEceuN1f0sgRxYMsb3wncqjEpsfFj_-MJoRYffJms1WfWqZM7wO9_LTLsm29kBwulJ_2JKzDIJOHrtmk0sJjJKNO39lrpTzs-mfEtTVTgEgKmVCBNJvrI8i-RiKQOFqxgO6TAeUNEkdgrUgvwsVK-cizJxdsEQyi3qK11qH7TQ5lNyVGpMq8yGcbHC88GIYxuvYcI1GQsEFuT3aCoaePmY" style=""/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
 </div>
-<a class="flex items-center gap-2 text-tertiary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/contacto" id="service-3-btn" style="">
+<a class="flex items-center gap-2 text-tertiary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/pistas" id="service-3-btn" style="">
                         Leer Más <span class="material-symbols-outlined" style="">arrow_forward</span>
 </a>
 </div>
@@ -285,7 +315,7 @@
 <img alt="Mantenimiento Técnico" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP2MR2Vur0_9Fkorga7VE6di3jg7ajdwrv4BiA6gdDIGyo7G87Py1cpmtX4cHYJlM7T5KALNQLjL022us-uSnOgJWLP7ZRHvd62wV7-qEU2VTJ_R8NKo6J7C4tpnF3Sc61aWeT6KPIHiZVAMViuKWoezQSe79AotgBUlkNi8VZAWHg3LfE4S7vzRcLOiNDXDRBrxcfx0eYqILmwR6QEOqipSGuGNmwwOpbCkLrNRkvLxTj5SXXrfxXtRrLW3LBHgFyaslOy1C9kIU" style=""/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
 </div>
-<a class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/contacto" id="service-4-btn" style="">
+<a class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all" href="https://www.ruled.com.mx/soporte" id="service-4-btn" style="">
                         Leer Más <span class="material-symbols-outlined" style="">arrow_forward</span>
 </a>
 </div>
@@ -357,12 +387,12 @@
 <p class="text-white/20 text-[10px] uppercase tracking-tighter" style="">Engineered for the darkness.</p>
 </div>
 <div class="grid grid-cols-2 gap-4">
-<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-sale" style="">Cotización Venta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-sale" style="">Cotización Venta</a>
 <a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.instagram.com/rulediluminacion" style="" target="_blank">Instagram</a>
-<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-rent" style="">Cotización Renta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-rent" style="">Cotización Renta</a>
 <a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.facebook.com/Rulediluminacion" style="" target="_blank"">Facebook</a>
 <a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.youtube.com/@rulediluminacion" id="nav-youtube" style="" target="_blank"">YOUTUBE</a>
-<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/contacto" id="nav-privacy" style="">Privacidad</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-privacy" style="">Tienda</a>
 </div>
 <div class="flex flex-col justify-between items-end">
 <div class="flex gap-4">
@@ -417,8 +447,8 @@ const translations = {
     'service-1-title': 'Renta de Equipos',
     'service-1-desc': 'Altavoces, micrófonos e iluminación para todas las escalas. Contamos con el inventario más robusto para eventos corporativos y masivos.',
     'service-1-btn': 'Leer Más <span class="material-symbols-outlined">arrow_forward</span>',
-    'service-2-title': 'Fabricación y Renta LED',
-    'service-2-desc': 'Pantallas personalizadas para interiores y exteriores. Diseños a medida con la mayor resolución del mercado para un impacto visual absoluto.',
+    'service-2-title': 'Pantallas Led Pixel',
+    'service-2-desc': 'Fabricación y Renta de Pantallas personalizadas para interiores y exteriores. Diseños a medida con la mayor resolución del mercado para un impacto visual absoluto.',
     'service-2-btn': 'Leer Más <span class="material-symbols-outlined">arrow_forward</span>',
     'service-3-title': 'Pistas LED Pixel',
     'service-3-desc': 'Pistas de baile vibrantes e interactivas. Tecnología pixel-to-pixel que reacciona al movimiento y la música en tiempo real.',
@@ -451,8 +481,8 @@ const translations = {
     'service-1-title': 'Equipment Rental',
     'service-1-desc': 'Speakers, microphones and lighting for all scales. We have the most robust inventory for corporate and mass events.',
     'service-1-btn': 'Read More <span class="material-symbols-outlined">arrow_forward</span>',
-    'service-2-title': 'LED Fabrication & Rental',
-    'service-2-desc': 'Custom indoor and outdoor screens. Tailor-made designs with the highest resolution on the market for an absolute visual impact.',
+    'service-2-title': 'Pixel Led Screens',
+    'service-2-desc': 'Custom Fabrication & Rental indoor and outdoor screens. Tailor-made designs with the highest resolution on the market for an absolute visual impact.',
     'service-2-btn': 'Read More <span class="material-symbols-outlined">arrow_forward</span>',
     'service-3-title': 'Pixel LED Floors',
     'service-3-desc': 'Vibrant and interactive dance floors. Pixel-to-pixel technology that reacts to movement and music in real time.',
@@ -467,7 +497,7 @@ const translations = {
     'nav-sale': 'Sales Quote',
     'nav-rent': 'Rental Quote',
     'nav-youtube': 'YOUTUBE',
-    'nav-privacy': 'Privacy',
+    'nav-privacy': 'Shop',
     'footer-rights': '© 2024 ruled audiovisual. all rights reserved.'
   }
 };

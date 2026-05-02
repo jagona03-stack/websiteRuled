@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<script src="//code.tidio.co/7aql0g9fq03cq2dmw2nrap259tkyx6fm.js" async></script>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RULED | Ingeniería Visual LED</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#00575b",
+                    "outline": "#737674",
+                    "surface-container-lowest": "#000000",
+                    "primary-fixed": "#d978ff",
+                    "on-primary-fixed-variant": "#4c0068",
+                    "surface-bright": "#282d2b",
+                    "surface-container-highest": "#222725",
+                    "outline-variant": "#464847",
+                    "error-dim": "#d73357",
+                    "on-primary": "#4f006c",
+                    "on-tertiary-fixed-variant": "#6a006a",
+                    "tertiary-fixed-dim": "#ff61f8",
+                    "surface-tint": "#e08dff",
+                    "on-secondary-fixed-variant": "#006266",
+                    "error": "#ff6e84",
+                    "on-primary-container": "#3d0055",
+                    "inverse-primary": "#9a00cf",
+                    "tertiary-container": "#fe00fe",
+                    "secondary-dim": "#00e5ee",
+                    "secondary-container": "#00696e",
+                    "tertiary-dim": "#ff51fa",
+                    "on-background": "#fbfdfa",
+                    "surface-container": "#171a19",
+                    "primary": "#e08dff",
+                    "secondary-fixed-dim": "#00e5ee",
+                    "secondary-fixed": "#00f4fe",
+                    "primary-fixed-dim": "#d160ff",
+                    "on-tertiary-container": "#230023",
+                    "surface-container-low": "#111413",
+                    "on-surface-variant": "#a9aca9",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary": "#400040",
+                    "on-error": "#490013",
+                    "secondary": "#00f4fe",
+                    "surface-variant": "#222725",
+                    "tertiary": "#ff51fa",
+                    "on-error-container": "#ffb2b9",
+                    "primary-container": "#d978ff",
+                    "surface-container-high": "#1c201f",
+                    "on-tertiary-fixed": "#320032",
+                    "background": "#0c0f0e",
+                    "error-container": "#a70138",
+                    "on-secondary-container": "#dffdff",
+                    "tertiary-fixed": "#ff81f5",
+                    "inverse-on-surface": "#535654",
+                    "surface-dim": "#0c0f0e",
+                    "inverse-surface": "#f8faf7",
+                    "on-surface": "#fbfdfa",
+                    "on-secondary-fixed": "#004346",
+                    "surface": "#0c0f0e",
+                    "primary-dim": "#bc00fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "display": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body { background-color: #0c0f0e; color: #fbfdfa; font-family: 'Manrope', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glow-primary { box-shadow: 0 0 30px 5px rgba(224, 141, 255, 0.15); }
+      .glow-secondary { box-shadow: 0 0 30px 5px rgba(0, 244, 254, 0.15); }
+      .glass { backdrop-filter: blur(20px); background: rgba(23, 26, 25, 0.6); }
+      .pixel-grid { background-image: radial-gradient(circle, #464847 1px, transparent 1px); background-size: 20px 20px; }
+      .logo-glow { filter: drop-shadow(0 0 8px rgba(224, 141, 255, 0.4)); }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_30px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
+<div class="flex items-center">
+<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/></a>
+</div>
+<!-- Language Selector (Moved to Top Right) -->
+<div class="flex items-center gap-4 font-label text-[10px] tracking-widest uppercase">
+<button class="hover:text-secondary transition-all duration-300" id="lang-btn-es" onclick="changeLanguage('es')">ES</button>
+<span class="w-[1px] h-3 bg-white/20"></span>
+<button class="text-white/40 hover:text-secondary transition-all duration-300" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#1c201f] to-transparent h-[1px]"></div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center opacity-30 mix-blend-screen" data-alt="A high-contrast cinematic shot of a massive LED concert screen in a dark venue."></div>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10"></div>
+<div class="pixel-grid absolute inset-0 opacity-10 z-0"></div>
+<div class="relative z-20 text-center max-w-5xl px-6">
+<span class="font-label text-secondary tracking-[0.3em] uppercase text-xs mb-4 block">Ingenieria visual</span>
+<h1 class="font-display text-5xl md:text-8xl font-black tracking-tighter text-on-surface leading-none mb-8">
+                Pantallas Led Pixel:<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary">El Corazón del Escenario</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                Desciframos la ciencia detrás de la luz. Desde el micro-píxel hasta el despliegue a gran escala en estadios.
+            </p>
+</div>
+</section>
+<!-- Modular Design Section (New/Enhanced) -->
+<section class="py-32 bg-surface-container-low border-y border-white/5 relative overflow-hidden" id="modular-design">
+<div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 space-y-8">
+<div>
+<span class="font-label text-primary tracking-[0.4em] font-black uppercase text-xs mb-3 block">Modular Design</span>
+<h2 class="font-display text-5xl md:text-6xl font-black uppercase text-white tracking-tighter">DISEÑO <span class="text-primary-dim">MODULAR</span></h2>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        La esencia de nuestra tecnología radica en la <strong>Seamless Integration</strong>. Gabinetes de 500x500mm y 500x1000mm diseñados para ensamblarse con precisión, permitiendo crear lienzos digitales de cualquier escala sin costuras visibles.
+                    </p>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div class="border-l-2 border-primary/40 pl-6">
+<h4 class="font-display text-2xl font-bold text-white">500x500mm</h4>
+<p class="text-sm text-outline">Gabinete Estándar</p>
+</div>
+<div class="border-l-2 border-secondary/40 pl-6">
+<h4 class="font-display text-2xl font-bold text-white">500x1000mm</h4>
+<p class="text-sm text-outline">Gabinete Versátil</p>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="grid grid-cols-3 gap-1 opacity-80 group">
+<!-- Visual representation of modular cabinets -->
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_01</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_02</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_03</span>
+</div>
+<div class="aspect-[1/2] col-span-1 row-span-2 bg-surface-container-high border border-secondary/20 hover:border-secondary transition-colors flex items-center justify-center group-hover:bg-secondary/5">
+<span class="text-[8px] font-label text-outline">MOD_04_XL</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_05</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_06</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_07</span>
+</div>
+<div class="aspect-square bg-surface-container-high border border-primary/20 hover:border-primary transition-colors flex items-center justify-center group-hover:bg-primary/5">
+<span class="text-[8px] font-label text-outline">MOD_08</span>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Grid Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="technology">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Pixel Pitch (Bento Card) -->
+<div class="md:col-span-7 bg-surface-container-low p-8 rounded-lg relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300" id="pixel-pitch">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<div class="w-full h-full bg-primary blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+</div>
+<span class="material-symbols-outlined text-primary mb-6 text-4xl">grid_view</span>
+<h3 class="font-display text-3xl font-bold mb-4 text-on-surface">Pixel Pitch (Separación de Píxel)</h3>
+<p class="font-body text-on-surface-variant mb-6">La resolución física definida por la distancia entre el centro de dos LEDs contiguos.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="border-l-2 border-primary/30 pl-4">
+<span class="block font-display text-xl text-primary font-bold">P1.2 - P2.5</span>
+<p class="text-xs font-label text-outline">Gamas de interior, visión &lt; 3m</p>
+</div>
+<div class="border-l-2 border-secondary/30 pl-4">
+<span class="block font-display text-xl text-secondary font-bold">P3.9 - P10</span>
+<p class="text-xs font-label text-outline">Gamas de exterior, visión &gt; 5m</p>
+</div>
+</div>
+</div>
+<!-- Brillo (Nits) -->
+<div class="md:col-span-5 bg-surface-container-low p-8 rounded-lg border-t-2 border-transparent hover:border-secondary transition-all duration-300" id="brightness">
+<span class="material-symbols-outlined text-secondary mb-6 text-4xl">light_mode</span>
+<h3 class="font-display text-3xl font-bold mb-4 text-on-surface">Brillo (Nits)</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs font-label mb-2 text-outline"><span>INTERIOR</span><span>1,500 - 3,000 NITS</span></div>
+<div class="w-full h-1 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[30%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-label mb-2 text-outline"><span>EXTERIOR</span><span>5,000 - 10,000 NITS</span></div>
+<div class="w-full h-1 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[85%]"></div>
+</div>
+</div>
+<p class="text-sm font-body text-on-surface-variant italic leading-snug">El brillo de exterior garantiza visibilidad total incluso bajo luz solar directa.</p>
+</div>
+</div>
+<!-- Tecnologia LED -->
+<div class="md:col-span-4 bg-surface-container-low p-8 rounded-lg hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-tertiary mb-6 text-4xl">memory</span>
+<h3 class="font-display text-2xl font-bold mb-4 text-on-surface">Arquitectura LED</h3>
+<ul class="space-y-4 font-body text-sm text-on-surface-variant">
+<li class="flex items-start gap-3"><span class="text-tertiary mt-1">●</span> <strong>SMD:</strong> Estándar de la industria por su consistencia cromática.</li>
+<li class="flex items-start gap-3"><span class="text-tertiary mt-1">●</span> <strong>GOB:</strong> Protección epoxi para mayor durabilidad (IP65).</li>
+<li class="flex items-start gap-3"><span class="text-tertiary mt-1">●</span> <strong>Mini/Micro LED:</strong> Contraste infinito y eficiencia energética extrema.</li>
+</ul>
+</div>
+<!-- Refresh Rate -->
+<div class="md:col-span-8 bg-surface-container-low p-8 rounded-lg flex flex-col md:flex-row gap-8 items-center relative overflow-hidden">
+<div class="flex-1">
+<span class="material-symbols-outlined text-primary mb-6 text-4xl">speed</span>
+<h3 class="font-display text-3xl font-bold mb-4 text-on-surface">Frecuencia de Actualización</h3>
+<p class="font-body text-on-surface-variant mb-6">Crítico para broadcast y streaming. Evita el parpadeo (flickering) en cámara.</p>
+<div class="flex gap-4">
+<span class="px-4 py-2 bg-primary/10 text-primary font-label text-sm rounded border border-primary/20">3,840 Hz Standard</span>
+<span class="px-4 py-2 bg-secondary/10 text-secondary font-label text-sm rounded border border-secondary/20">7,680 Hz Pro Stage</span>
+</div>
+</div>
+<div class="w-full md:w-64 h-48 bg-background rounded overflow-hidden relative border border-outline-variant/20">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-[1px] bg-secondary shadow-[0_0_10px_#00f4fe] animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Backstage Section -->
+<section class="py-24 bg-surface-container-low relative" id="backstage">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-display text-5xl md:text-6xl font-black text-on-surface mb-6 tracking-tighter">EL BACKSTAGE</h2>
+<p class="font-body text-on-surface-variant text-lg">La robustez mecánica detrás de la imagen. La modularidad es la clave de la versatilidad en tour.</p>
+</div>
+<div class="hidden md:block pb-2">
+<span class="text-outline font-label text-xs tracking-widest">SYSTEM SCHEMATICS V4.1</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-8">
+<img alt="Gabinetes 500x500mm" class="w-full aspect-square object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArQYDpsCHS7S252D8BtwSRqEGKlxJy4m0RQfx7DKIfR6upz3q5GHEhPi6SZSxrRW97bDy6mlUr32wObZnKFKD51VcPXbr69VbADiGvRhvNUnPTDbWleNS1zZOksmZf0LqiJWJgxf70OcJEDa4w8xVAXUb71hZseGWtHnLvXLhXu2JpsY3WnPUDbj363nqEA6XQEEH8CSkccGa8e4JoEyMflfuoocbCiU0_lUj3FMIYwGT53juJruRoeBCakw_v4z3NKiVcFOmcRjw"/>
+<h4 class="font-display text-xl font-bold text-primary uppercase tracking-tight">Gabinetes Modulares</h4>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Estructura de aluminio fundido a presión para máxima precisión y ligereza. Ensamblaje magnético para servicio frontal.</p>
+</div>
+<div class="space-y-8">
+<img alt="Rigging &amp; Truss" class="w-full aspect-square object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaip3dQiVqxM_Id9ktQakD2N-9TUr9_DXvoA264Syq4VcmAgh2ApyHz2LriteHYXPnuANoRCcrRnvFVPdFhs5Tva4aDHCXpHWAM3iGERmuH9PcAR8Jn7_v-CEBkjT1bLk5T770y966nAakBRaGVKkQuRqOfkiBYK_H-YKRr7XEhn8hpOuN5F4Ja58h5AVIEQ11skMIF4sAxvEq-SS9nFhRg_QRBHuvFM5OuZYmErCDPICJ7XZQTpklAFX2UFbNMTV0Rl279KL_7G0"/>
+<h4 class="font-display text-xl font-bold text-secondary uppercase tracking-tight">Rigging &amp; Truss</h4>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Sistemas de cuelgue y stack certificados. Capacidad de curvado cóncavo y convexo hasta 10 grados por módulo.</p>
+</div>
+<div class="space-y-8">
+<img alt="Capa de Datos y Energía" class="w-full aspect-square object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK2L_QFTZ66u_Mh_HsyIzRL9xzZMMsWCBubAFRlKT87u5wWVICpHv_8pbsL7OK23waZOQT0k_PXEdpkDQG21r3w3fIQHxKxkCwzq31ZWCp5cBdOeFjdue1XLxRdz2ZdeBRF1Bk8tUxQb7IFf4WMDsTsoDXN9wgtFPKaZtxZnG__kySOozAi5EU_VAvrzgnpdk96eI47ujRlaCDMpKHpqwyMh2fOvCjvsZsQZVfs3y7wVKXLTNZ7RAzowQndaQR-q-jBOGQFIt5Xzs"/>
+<h4 class="font-display text-xl font-bold text-tertiary uppercase tracking-tight">Conexión de Datos y Energía</h4>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Conectividad Powercon True1 y Neutrik Ethercon para redundancia total de señal y suministro eléctrico ininterrumpido.</p>
+</div>
+</div>
+<!-- Venta y Fabricación Section -->
+<section class="py-24 px-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div>
+<span class="text-tertiary font-label text-[10px] tracking-widest uppercase block mb-2">Inventory Solutions</span>
+<h2 class="font-display text-5xl font-black text-white uppercase">Venta y Fabricación</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm text-right font-body">Sistemas LED profesionales certificados para operación 24/7 en los entornos más exigentes del mundo.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card P2.6 -->
+<div class="bg-surface-container-low p-1 group hover:bg-gradient-to-b hover:from-primary/50 hover:to-transparent transition-all duration-500">
+<div class="bg-surface-container-high p-8 h-full flex flex-col">
+<div class="flex justify-between items-start mb-8">
+<span class="font-display text-5xl font-black text-white opacity-20 group-hover:opacity-100 transition-opacity">P2.6</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">view_module</span>
+</div>
+<h3 class="text-white font-bold text-xl uppercase mb-4">Indoor Precision</h3>
+<p class="text-slate-500 mb-8 flex-grow">Ideal para estudios de televisión y auditorios donde la resolución crítica es primordial.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-xs font-label uppercase text-slate-400">
+<span>Brightness</span>
+<span class="text-white">1200 nits</span>
+</div>
+<div class="w-full h-1 bg-surface-variant">
+<div class="w-1/3 h-full bg-primary shadow-[0_0_8px_rgba(138,43,226,0.6)]"></div>
+</div>
+</div>
+<a href="https://www.ruled.com.mx/contacto" class="w-full py-3 border border-outline-variant text-white font-label uppercase tracking-widest text-[10px] hover:bg-primary hover:text-on-primary transition-all text-center block">Más Información</a>
+</div>
+</div>
+<!-- Card P3.9 -->
+<div class="bg-surface-container-low p-1 group hover:bg-gradient-to-b hover:from-secondary/50 hover:to-transparent transition-all duration-500">
+<div class="bg-surface-container-high p-8 h-full flex flex-col border-t-2 border-secondary/0 group-hover:border-secondary transition-all">
+<div class="flex justify-between items-start mb-8">
+<span class="font-display text-5xl font-black text-white opacity-20 group-hover:opacity-100 transition-opacity">P3.9</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">outdoor_grill</span>
+</div>
+<h3 class="text-white font-bold text-xl uppercase mb-4">Hybrid Dynamic</h3>
+<p class="text-slate-500 mb-8 flex-grow">El estándar de la industria para festivales. Equilibrio perfecto entre peso y luminosidad.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-xs font-label uppercase text-slate-400">
+<span>Brightness</span>
+<span class="text-white">5000 nits</span>
+</div>
+<div class="w-full h-1 bg-surface-variant">
+<div class="w-3/4 h-full bg-secondary shadow-[0_0_8px_rgba(0,244,254,0.6)]"></div>
+</div>
+</div>
+<a href="https://www.ruled.com.mx/contacto" class="w-full py-3 border border-outline-variant text-white font-label uppercase tracking-widest text-[10px] hover:bg-primary hover:text-on-primary transition-all text-center block">Más Información</a>
+</div>
+</div>
+<!-- Card P4.8 -->
+<div class="bg-surface-container-low p-1 group hover:bg-gradient-to-b hover:from-tertiary/50 hover:to-transparent transition-all duration-500">
+<div class="bg-surface-container-high p-8 h-full flex flex-col">
+<div class="flex justify-between items-start mb-8">
+<span class="font-display text-5xl font-black text-white opacity-20 group-hover:opacity-100 transition-opacity">P4.8</span>
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">stadium</span>
+</div>
+<h3 class="text-white font-bold text-xl uppercase mb-4">Extreme Outdoor</h3>
+<p class="text-slate-500 mb-8 flex-grow">Diseñado para estadios y fachadas. Máxima visibilidad bajo luz solar directa.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-xs font-label uppercase text-slate-400">
+<span>Brightness</span>
+<span class="text-white">6500 nits</span>
+</div>
+<div class="w-full h-1 bg-surface-variant">
+<div class="w-full h-full bg-tertiary shadow-[0_0_8px_rgba(255,81,250,0.6)]"></div>
+</div>
+</div>
+<a href="https://www.ruled.com.mx/contacto" class="w-full py-3 border border-outline-variant text-white font-label uppercase tracking-widest text-[10px] hover:bg-primary hover:text-on-primary transition-all text-center block">Más Información</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- Contact Integration Section -->
+<section class="py-32 px-8 flex flex-col items-center justify-center text-center bg-gradient-to-b from-surface-container-lowest to-surface-container-low border-t border-primary/10">
+<div class="max-w-2xl mx-auto space-y-8">
+<div class="flex justify-center">
+<span class="material-symbols-outlined text-6xl text-primary animate-pulse" style="font-variation-settings: 'FILL' 0, 'wght' 200;">settings_input_component</span>
+</div>
+<h2 class="font-display text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">¿Listo para evolucionar?</h2>
+<p class="text-slate-400 font-body leading-relaxed">Personaliza tu configuración técnica con nuestros expertos en ingeniería visual.</p>
+<a class="inline-flex items-center group" href="https://ruled.com.mx/contacto">
+<button class="bg-transparent border-2 border-primary text-primary px-10 py-4 font-display font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary hover:neon-glow-primary transition-all duration-300 flex items-center gap-4">
+                    Solicitar información técnica
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</a>
+</div>
+</section>
+
+</div>
+<!-- Unified Interactive Footer -->
+<!-- Unified Interactive Footer -->
+<footer class="bg-[#0A0D0C] w-full border-t border-[#8A2BE2]/10">
+    
+    <!-- Enlace envolvente para todo el Grid de Instagram -->
+    <a href="https://www.instagram.com/rulediluminacion" target="_blank" rel="noopener noreferrer" class="block group relative">
+        
+        <!-- Instagram Grid Integration -->
+        <div class="w-full grid grid-cols-2 md:grid-cols-6 h-40 md:h-60 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 opacity-30 group-hover:opacity-100">
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Instalación de panel LED profesional" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU3kch3Y2H0o2hC8yK8OZxaDWmwFMVC0vl_gOgrMWFA_5nzIxR_fAe_J4NYAHumBIGTuZw9df-1Nzulb7c4u-DbvL83p9GHDWVsFbhHupfQ8jKJa5KOx8N4H62wnCL-8iEi3fKSh3sjuC-J4BgHiZS43MNT6wbyW8berMxuk5_sfFPNFD7dXX_PgHaRnwd7Y5vPlhx0vgnslrOh1zpZSMGxPz2hg210bx2oQhH5wv3LdoufhVItnyLN4naFG3kQKPfxevv-8Z8gGg"/>
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Escenario de festival con torres LED" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7sCH58wwClyr3t6tPLExRa2xoYx84YBk7cX4PMi8x0gQ_nYzZUTgUCv1-4EWS8Jwe1OTiO8jqKIgOPIHa0UFGFUXEIXK9SH3WQix08jHmytdgm47M4XyxCl4ob2XVEea-MK5dq_2QzomALVzFaTTAvXqoc-GjdVfxyjVTrZs5R1Ouxg-ozHUXfX7d13Ou5fXxB5sKLHLWalcy-BCwtiGKgOS7Tp47tvAxHzZ3ABXj84PmyyC6ZEEObTZUNWAJN_uXiv7L5ZuMK5U"/>
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Macro de pixeles LED" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfVpGRsZUSA6WlDj4ARJNszAJYnkMtreChjArZdP8wq55mZh3FnuIdFUZGpyb-k-qggPOYKz9NLhoQNCeBDZwlPXtJ8mBhhAcVHSCqQC6tmNsRGC8datpNd1m_P73QHQOsQP8F06WXpGs37g09KApgXgjP3ecw6y7PM40t7AkSjwVCeLkzOs9Kv2cmfEPgKSeZsdWKv9Zj7EGJsS1FZHNeS3084DlTfZ0fLvjw1jVZoW1v07H032gF7Gi0nNEru1onEDqadW9Xp9I"/>
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Iluminación arquitectónica LED" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuASK_AG5B6MW_XTTARsOCREBDvECWCVGz94cIm8PknXCjqixHRCKkzTw8OBDizhLcMu7qi54IKCvj2SPW-029pwol2lWYYsYyRQG6QNLmU0QKN-gbJHZRsPg_MWLf4usVOiCWE1R0KQLsf6EFvhwRCLLEULMQpGj7X680XKOqmp-8HgUDSfA_tAWsBdH3MFmpgnwT67pRCM_g3E0LyGGH4G73FFLtU76z_dxibbTSGFbZroIDhmjs4JYKA19q-OgcK6lgYbMJNOXeQ"/>
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Cabina de control de video" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_pztIaFzsSWnOxwUsN0WwPAMQlJ0TVgWztTSXb0pz1z_0RwEThaj19rrLO3yHnJjGoUHLk7mhSEKStmbQuqNNYwlLWIgHR0Iss5gEK28HbnV40OhOvatpSX8QxH2zGQJI_A5awjI2M6wLx0gtRADMK-pP5DGsqGgExC6zVOuQK9CeImwWH3DjkL74OBLb85xAg2FHqsbyviBq3vxbIqQtJlRX9x4vnJds4PTjl9zca18S226WCZnhqqnDKEB7dema540BRKUfym8"/>
+            
+            <img class="w-full h-full object-cover" 
+                 data-alt="Estructura trasera de pantalla LED" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDevCCFqoiby06jtSiH0CAgA7FXvEWxgj5ELxxfHDdQBER9eJ4iiWuNaFjFNxarz-ynj6ZWgA1YLkFIz6zRibYyHlOS0N6MJgLODffrfC1pl_C0VnIc2gc5b1d0wnqsAAz9uIuhCSzIetfBRnPVFEVpjiwcYk83_C4mVhmuZlpC2DDG1JkkST-K9fXkhW8Y7TANvCS_Q6QXoxB0R9-ISOofxy84ZCRx1O6_2pz_Tld6pV4UjhyLM96vsya30Q7rdMGY0DLh9Y8Isbw"/>
+        </div>
+
+        <!-- Etiqueta flotante que aparece al pasar el mouse -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50">
+            <span class="text-white font-bold border-2 border-white px-6 py-2 uppercase tracking-[0.2em] text-sm">
+                Seguir en Instagram
+            </span>
+        </div>
+    </a>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+</section>
+</div>
+<!-- Footer (Unified) -->
+<footer class="w-full border-t border-[#1c201f] bg-[#0c0f0e] px-12 py-16 font-['Manrope'] text-sm uppercase tracking-widest">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<img alt="Ruled Logo" class="h-6 logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png" style=""/>
+</div>
+<p class="text-white/30 lowercase tracking-normal normal-case mt-4 max-w-xs" id="footer-desc" style="">
+                    Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.
+                </p>
+<p class="text-white/20 text-[10px] uppercase tracking-tighter" style="">Engineered for the darkness.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-sale" style="">Cotización Venta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.instagram.com/rulediluminacion" style="" target="_blank">Instagram</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-rent" style="">Cotización Renta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.facebook.com/Rulediluminacion" style="" target="_blank"">Facebook</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.youtube.com/@rulediluminacion" id="nav-youtube" style="" target="_blank"">YOUTUBE</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-privacy" style="">Tienda</a>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<a class="hover:scale-110 transition-transform" href="https://www.youtube.com" style="" target="_blank"><span class="material-symbols-outlined text-[#bc00fb]" style="">bolt</span></a>
+<a class="hover:scale-110 transition-transform" href="https://www.ruled.com.mx" style="" target="_blank"><span class="material-symbols-outlined text-[#00f4fe]" style="">visibility</span></a>
+</div>
+<p class="text-white/30 text-[10px] mt-8 lowercase" id="footer-rights" style="">
+                    © 2024 Ruled Audiovisual. Todos los derechos reservados.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+const translations = {
+    es: {
+        nav_sale: "Cotización Venta",
+        nav_rent: "Cotización Renta",
+        hero_label: "INGENIERÍA VISUAL",
+        hero_h1: "Pantallas Led Pixel:<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary'>El Corazón del Escenario</span>",
+        hero_p: "Desciframos la ciencia detrás de la luz. Desde el micro-píxel hasta el despliegue a gran escala en estadios.",
+        modular_label: "DISEÑO MODULAR",
+        modular_h2: "DISEÑO <span class='text-primary-dim'>MODULAR</span>",
+        modular_p: "La esencia de nuestra tecnología radica en la <strong>Seamless Integration</strong>. Gabinetes de 500x500mm y 500x1000mm diseñados para ensamblarse con precisión.",
+        backstage_h2: "EL BACKSTAGE",
+        backstage_p: "La robustez mecánica detrás de la imagen. La modularidad es la clave de la versatilidad en tour.",
+        venta_h2: "Venta y Fabricación",
+        venta_p: "Sistemas LED profesionales certificados para operación 24/7 en los entornos más exigentes del mundo.",
+        footer_desc: "Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.",
+        btn_more: "Más Información"
+    },
+    en: {
+        nav_sale: "Sales Quote",
+        nav_rent: "Rental Quote",
+        hero_label: "VISUAL ENGINEERING",
+        hero_h1: "Pixel LED Screens:<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary'>The Heart of the Stage</span>",
+        hero_p: "We decode the science behind the light. From micro-pixel to large-scale stadium deployments.",
+        modular_label: "MODULAR DESIGN",
+        modular_h2: "MODULAR <span class='text-primary-dim'>DESIGN</span>",
+        modular_p: "The essence of our technology lies in <strong>Seamless Integration</strong>. 500x500mm and 500x1000mm cabinets designed to assemble with precision.",
+        backstage_h2: "THE BACKSTAGE",
+        backstage_p: "Mechanical robustness behind the image. Modularity is the key to touring versatility.",
+        venta_h2: "Sales & Manufacturing",
+        venta_p: "Professional LED systems certified for 24/7 operation in the world's most demanding environments.",
+        footer_desc: "Leaders in high-end audiovisual solutions for events and broadcast.",
+        btn_more: "More Information"
+    }
+};
+
+function changeLanguage(lang) {
+    // Hero
+    const heroH1 = document.querySelector('h1');
+    if(heroH1) heroH1.innerHTML = translations[lang].hero_h1;
+    
+    const heroP = document.getElementById('hero-p') || document.querySelector('section p');
+    if(heroP) heroP.innerHTML = translations[lang].hero_p;
+
+    // Modular Design
+    const modH2 = document.querySelector('#modular-design h2');
+    if(modH2) modH2.innerHTML = translations[lang].modular_h2;
+    
+    const modP = document.querySelector('#modular-design p');
+    if(modP) modP.innerHTML = translations[lang].modular_p;
+
+    // Backstage
+    const backH2 = document.querySelector('#backstage h2');
+    if(backH2) backH2.innerHTML = translations[lang].backstage_h2;
+
+    // Venta y Fabricación
+    const ventaH2 = document.querySelector('section h2.text-white');
+    if(ventaH2) ventaH2.innerText = translations[lang].venta_h2;
+
+    // Botones "Más Información"
+    document.querySelectorAll('a[href*="contacto"]').forEach(link => {
+        if(!link.querySelector('button')) { // No afectar al botón con flecha del final
+            link.innerText = translations[lang].btn_more;
+        }
+    });
+
+    // Footer
+    const footerDesc = document.getElementById('footer-desc');
+    if(footerDesc) footerDesc.innerText = translations[lang].footer_desc;
+
+    // Actualizar UI del selector
+    document.getElementById('lang-es').className = lang === 'es' ? 'text-[10px] uppercase tracking-widest text-secondary font-bold' : 'text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors font-bold';
+    document.getElementById('lang-en').className = lang === 'en' ? 'text-[10px] uppercase tracking-widest text-secondary font-bold' : 'text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors font-bold';
+    
+    localStorage.setItem('ruled_lang', lang);
+}
+
+document.getElementById('lang-es').addEventListener('click', () => changeLanguage('es'));
+document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
+
+// Ejecutar al cargar
+window.onload = () => {
+    const saved = localStorage.getItem('ruled_lang') || 'es';
+    changeLanguage(saved);
+};
+</script>
+
+</body>
+<script>
+    // Diccionario de traducciones
+    const translations = {
+        es: {
+            hero_title: "Pantallas Led Pixel:<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary'>El Corazón del Escenario</span>",
+            hero_subtitle: "Desciframos la ciencia detrás de la luz. Desde el micro-píxel hasta el despliegue a gran escala en estadios.",
+            modular_title: "DISEÑO <span class='text-primary-dim'>MODULAR</span>",
+            footer_desc: "Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.",
+            more_info: "Más Información"
+        },
+        en: {
+            hero_title: "Pixel LED Screens:<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary'>The Heart of the Stage</span>",
+            hero_subtitle: "We decode the science behind the light. From micro-pixel to large-scale stadium deployments.",
+            modular_title: "MODULAR <span class='text-primary-dim'>DESIGN</span>",
+            footer_desc: "Leaders in high-end audiovisual solutions for events and broadcast.",
+            more_info: "More Information"
+        }
+    };
+
+    const btnEs = document.getElementById('lang-es');
+    const btnEn = document.getElementById('lang-en');
+
+    function changeLanguage(lang) {
+        // 1. Cambiar Hero Section
+        document.querySelector('h1').innerHTML = translations[lang].hero_title;
+        document.querySelector('p.font-body').innerText = translations[lang].hero_subtitle;
+        
+        // 2. Cambiar Diseño Modular
+        document.querySelector('#modular-design h2').innerHTML = translations[lang].modular_title;
+        
+        // 3. Cambiar Footer
+        document.getElementById('footer-desc').innerText = translations[lang].footer_desc;
+
+        // 4. Cambiar todos los botones de "Más Información"
+        document.querySelectorAll('a[href*="contacto"]').forEach(btn => {
+            btn.innerText = lang === 'en' ? 'More Information' : 'Más Información';
+        });
+
+        // 5. Actualizar estilos visuales de los botones del selector
+        if (lang === 'es') {
+            btnEs.classList.replace('text-white/40', 'text-secondary');
+            btnEn.classList.replace('text-secondary', 'text-white/40');
+        } else {
+            btnEn.classList.replace('text-white/40', 'text-secondary');
+            btnEs.classList.replace('text-secondary', 'text-white/40');
+        }
+        
+        // Guardar preferencia
+        localStorage.setItem('preferredLang', lang);
+    }
+
+    btnEs.addEventListener('click', () => changeLanguage('es'));
+    btnEn.addEventListener('click', () => changeLanguage('en'));
+
+    // Cargar idioma guardado al iniciar
+    const savedLang = localStorage.getItem('preferredLang') || 'es';
+    if(savedLang === 'en') changeLanguage('en');
+</script>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<script src="//code.tidio.co/7aql0g9fq03cq2dmw2nrap259tkyx6fm.js" async></script>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RULED SOLUTIONS | Bajo Construcción</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#000000",
+                        "surface-dim": "#0c0f0e",
+                        "on-primary": "#4f006c",
+                        "primary-fixed-dim": "#d160ff",
+                        "error-dim": "#d73357",
+                        "secondary-dim": "#00e5ee",
+                        "background": "#0c0f0e",
+                        "surface-tint": "#e08dff",
+                        "surface-variant": "#222725",
+                        "tertiary": "#ff51fa",
+                        "inverse-on-surface": "#535654",
+                        "secondary-container": "#00696e",
+                        "on-secondary-container": "#dffdff",
+                        "outline-variant": "#464847",
+                        "secondary-fixed-dim": "#00e5ee",
+                        "inverse-surface": "#f8faf7",
+                        "on-surface": "#fbfdfa",
+                        "secondary-fixed": "#00f4fe",
+                        "tertiary-dim": "#ff51fa",
+                        "on-primary-fixed-variant": "#4c0068",
+                        "tertiary-container": "#fe00fe",
+                        "on-secondary-fixed-variant": "#006266",
+                        "primary": "#e08dff",
+                        "surface-container-high": "#1c201f",
+                        "tertiary-fixed": "#ff81f5",
+                        "surface-container-highest": "#222725",
+                        "on-background": "#fbfdfa",
+                        "error": "#ff6e84",
+                        "on-tertiary-container": "#230023",
+                        "secondary": "#00f4fe",
+                        "primary-container": "#d978ff",
+                        "surface-container": "#171a19",
+                        "surface-bright": "#282d2b",
+                        "surface-container-low": "#111413",
+                        "primary-dim": "#bc00fb",
+                        "on-secondary-fixed": "#004346",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed-dim": "#ff61f8",
+                        "surface": "#0c0f0e",
+                        "on-tertiary-fixed-variant": "#6a006a",
+                        "on-error": "#490013",
+                        "outline": "#737674",
+                        "on-tertiary": "#400040",
+                        "on-error-container": "#ffb2b9",
+                        "on-primary-container": "#3d0055",
+                        "on-tertiary-fixed": "#320032",
+                        "on-secondary": "#00575b",
+                        "primary-fixed": "#d978ff",
+                        "on-surface-variant": "#a9aca9",
+                        "inverse-primary": "#9a00cf",
+                        "error-container": "#a70138"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(224, 141, 255, 0.3);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 15px rgba(0, 244, 254, 0.4);
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_30px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
+<div class="flex items-center">
+<a class="block" href="https://www.ruled.com.mx"><img alt="Ruled Logo" class="h-8 w-auto logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png"/></a>
+</div>
+<!-- Language Selector (Moved to Top Right) -->
+<div class="flex items-center gap-4 font-label text-[10px] tracking-widest uppercase">
+<button class="hover:text-secondary transition-all duration-300" id="lang-btn-es" onclick="changeLanguage('es')">ES</button>
+<span class="w-[1px] h-3 bg-white/20"></span>
+<button class="text-white/40 hover:text-secondary transition-all duration-300" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#1c201f] to-transparent h-[1px]"></div>
+</nav>
+</header>
+<main class="min-h-screen pt-16">
+<!-- Cinematic Image Section -->
+<section class="relative h-[614px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-energy view from behind a professional lighting console at a massive live concert. Multiple large-scale LED screens illuminate a dense, cheering crowd with vibrant beams of electric indigo and magenta light cutting through a hazy atmosphere. The scene captures the technical scale and immersive power of high-end event production in a dark, nocturnal venue setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPImHaMziOOgA7LOPeuj2wr0yEPxoJZWSQShIBw3Avob6lcFqKSqXRKCL4wWbt6VTCg4T-dkkTkbFNbnn3yXqWFylCoqROuEc-vNg2YA8Jmo8qeX3nRlVHArzTdHhb3HlN2htOobVOurxUZkaDDunJepthUhowSMkn2m8hGKIxdEADBMRqhTCuk0WglMmGPGmMejiyOm5qHT3OyiemYThtQZA7Ph_-fopekXDDzv2eGQy6yAqyJUyxUMkvkznTpU5zsJPFCTJd5E"/>
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#000000] to-transparent z-20"></div>
+</section>
+<!-- Main Body Content -->
+<section class="bg-[#000000] py-24 flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+<!-- Subtle Ambient Glows -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full"></div>
+<div class="z-30 max-w-4xl mx-auto space-y-12">
+<!-- Large Official Logo -->
+<div class="flex justify-center mb-8">
+<img alt="RULED SOLUTIONS Large Logo" class="h-32 md:h-48 w-auto drop-shadow-[0_0_20px_rgba(138,43,226,0.2)]" data-alt="A large, ultra-high-definition version of the RULED SOLUTIONS corporate logo. The typography is bold and technical, presented in a glowing electric violet. It sits centrally on a pure black background, surrounded by a faint, atmospheric halo of magenta light spill that gives it a three-dimensional, backlit quality like a stadium LED installation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7f4InWdThrmXDuxr97KNgTxIC52MAqI5mP8EYtXcey-JyCxRvxHglx-GCNMZyxnjYZt8ErGL3PrCBJui74UJPGhFxdTjXfimhzjSaEiFM2Z56WN74h1TVSZcdCAVJwHz6eFwdXQb6JGy4_NgUpG8FvEGRjxuAKx6_J8eB7Uht24zHFd0SgmIk2fIdikOur5OemnB51r6uJsvcOSmBBFazUEf4Kak7PSReJh89Tut-c-TmwSc0VPGu6goOBooCzvAuGIosAShhXIk"/>
+</div>
+<!-- Headline -->
+<h1 class="font-headline font-bold text-3xl md:text-6xl lg:text-7xl tracking-tighter text-on-background leading-none max-w-3xl mx-auto">
+                    ESTAMOS CREANDO EL <span class="text-secondary drop-shadow-[0_0_10px_#00F4FE]">FUTURO</span> DEL ESPECTÁCULO
+                </h1>
+<!-- Action Button -->
+<div class="pt-8">
+<a class="group relative inline-flex items-center px-12 py-4 font-headline text-lg font-bold tracking-widest text-on-secondary uppercase transition-all duration-300" href="https://ruled.com.mx">
+<span class="absolute inset-0 bg-secondary rounded-lg transition-transform group-active:scale-95 neon-glow-secondary"></span>
+<span class="relative z-10">VOLVER AL INICIO</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Instagram Feed Teaser (Visual Gap) -->
+<section class="bg-surface-container-lowest py-20 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12 border-b border-white/5 pb-6">
+<div class="space-y-2">
+<h2 class="font-headline text-2xl font-bold uppercase tracking-widest text-white">Sigue el proceso</h2>
+<p class="font-body text-on-surface-variant">@RULEDILUMINACION</p>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Unified Interactive Footer -->
+<!-- Unified Interactive Footer -->
+<section class="bg-[#0A0D0C] w-full border-t border-[#8A2BE2]/10">
+    <!-- El enlace envuelve SOLAMENTE el contenedor de las imágenes -->
+    <a href="https://www.instagram.com/rulediluminacion" target="_blank" rel="noopener noreferrer" class="block group relative">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Imagen 1 -->
+            <div class="aspect-square bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBSUj1saHK5ZGFAPg6mHgaJ2HISDkdioIda9weKJMjts8c84flXXDvBcvqQx_NSZWx10_16BUqDy0rTXY6IAHEuKHAaYIF7zxWU6upFtrLhmpk-o5HC165XwsDBNm0rkx8jJ2nActX7KfPeMeuSbk5_5yRTUqdH4bZAc0zqcjbgfSZDN3E_zw01ZRG9omEJAIyeXkAanCBRq_vh5cCAxhABnmnWhApi1XnmEv7cHH-kjU0hPdoNs0yfG79Bc64uf9_4xBcie-TnYA"/>
+            </div>
+            <!-- Imagen 2 -->
+            <div class="aspect-square bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_yiDnnBOTDtL03DbDrVHLdX77N5l3Z2DyMwkKDLlvq0ig4I_6ucZkqOjIEMbbo1aay8-FtAylSydBTevWjwVQ2ZAzwYPT9cRi1gXXMeKvLEcW_3Z27VnBR9QjdxeX-EZR2-ughp_mT2XEgsOiqx_XjWSM-9VA65AlAN1YQ1KGok4864naLgXSHgbmolBojj33swR-nYFxyYp3s8KqSPwu3K46XDwRoSaMbjalbNDBBX7Bty3eI0Z0eN3g7b5djkPmuVUxQSQCYls"/>
+            </div>
+            <!-- Imagen 3 -->
+            <div class="aspect-square bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRxVb4k9plEJYfddud8Nqh4FM1RnN_9PWGqlTJ_We15CwUvAoOWtOg7Z3ftXLgjL_mSmObqMgqaSmF0Z_OQXJcolIdnY8np8medafE0H6yobwUM5CpeqmOR_CBmJY-Uyjtds3DdD46cdGkqT5ehL3rakd16t9IbsFebbKon2gNPI6J7RKsHoreE0let9FrUpgtJ9fEktHNro6wqvm_GOCQDBQPzgWln7lOu2q5r1QfXwyIQ5Jo7f7iTQA55R-j42pjAh7FkaW6kw"/>
+            </div>
+            <!-- Imagen 4 -->
+            <div class="aspect-square bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEzU_SDO2KgAg3t2qf92K-nCauNei9pw2aXJT1POcVdb9cG90p_fZTPerYcEFRbpU4UvGoBSSwa-I36vryAWiSjTafbETtPywPPP2dgi4wLE_hV1UfY8mZys0RPhWItkD3-Tg_9k3C_AjGS7qXEpHclWNVbjfd95G2O_rfh2poWoo0PbUPzULnwBEP0H-PXccfHUFi7nJz5VMe3YqBD1s_dp2V1PGEDubA32rBpYx6NV_mdBnv9GeIjRilcepUcxf8L3JCQ33hAME"/>
+            </div>
+        </div>
+    </a> <!-- AQUÍ CERRAMOS EL LINK para que no afecte a lo de abajo -->
+</section>
+</main>
+<!-- Footer (Unified) -->
+<footer class="w-full border-t border-[#1c201f] bg-[#0c0f0e] px-12 py-16 font-['Manrope'] text-sm uppercase tracking-widest">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<img alt="Ruled Logo" class="h-6 logo-glow" src="https://i.ibb.co/RpSfsk7T/Recurso-1-4x.png" style=""/>
+</div>
+<p class="text-white/30 lowercase tracking-normal normal-case mt-4 max-w-xs" id="footer-desc" style="">
+                    Líderes en soluciones audiovisuales de alta gama para eventos y broadcast.
+                </p>
+<p class="text-white/20 text-[10px] uppercase tracking-tighter" style="">Engineered for the darkness.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-sale" style="">Cotización Venta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.instagram.com/rulediluminacion" style="" target="_blank">Instagram</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-rent" style="">Cotización Renta</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.facebook.com/Rulediluminacion" style="" target="_blank"">Facebook</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.youtube.com/@rulediluminacion" id="nav-youtube" style="" target="_blank"">YOUTUBE</a>
+<a class="text-white/50 hover:text-[#00f4fe] transition-colors" href="https://www.ruled.com.mx/construccion" id="nav-privacy" style="">Tienda</a>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<a class="hover:scale-110 transition-transform" href="https://www.youtube.com" style="" target="_blank"><span class="material-symbols-outlined text-[#bc00fb]" style="">bolt</span></a>
+<a class="hover:scale-110 transition-transform" href="https://www.ruled.com.mx" style="" target="_blank"><span class="material-symbols-outlined text-[#00f4fe]" style="">visibility</span></a>
+</div>
+<p class="text-white/30 text-[10px] mt-8 lowercase" id="footer-rights" style="">
+                    © 2024 Ruled Audiovisual. Todos los derechos reservados.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
